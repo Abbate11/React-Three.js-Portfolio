@@ -34,7 +34,7 @@ const ListItem = styled.li`
 `;
 
 const Icons = styled.div`
-display: flex;
+    display: flex;
     align-items: center;
     gap: 20px;
 `;
@@ -59,13 +59,13 @@ const Nav = () => {
     <Section>
         <Container>
             <Links>
-            <Logo src="./img/logo.png"/>
-            <List>
-                <ListItem>Home</ListItem>
-                <ListItem>Studio</ListItem>
-                <ListItem>Works</ListItem>
-                <ListItem>Contact</ListItem>
-            </List>
+                <Logo src="./img/logo.png"/>
+                <List>
+                    <ListItem>Home</ListItem>
+                    <ListItem>Studio</ListItem>
+                    <ListItem>Works</ListItem>
+                    <ListItem>Contact</ListItem>
+                </List>
             </Links>
             <Icons>
                 <Icon src="./img/search.png"/>
