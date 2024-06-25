@@ -8,7 +8,7 @@ import styled from "styled-components"
 const Container = styled.div`
   height: 100vh;
   color: white;
-  background: url('./img/bg-img2.jpg') no-repeat center center fixed; 
+  background: url('./img/bg-img.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

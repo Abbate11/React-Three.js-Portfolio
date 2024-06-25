@@ -36,11 +36,11 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-    font-size: 90px;
+    font-size: 80px;
     font-weight: bold;
     cursor: pointer;
-    color: transparent;
-    -webkit-text-stroke: 1px white;
+    color: white;
+    opacity: 0.8;
     position: relative;
 
   &:after {
@@ -48,7 +48,10 @@ const ListItem = styled.li`
       position: absolute;
       top: 0;
       left: 0;
-      color: pink;
+      color: transparent;
+      opacity: 1.0;
+      background-image: linear-gradient(21deg,#ff76fe 0%, #8b2acd 40%, #330f86 80%);
+      background-clip: text;
       width: 0px;
       overflow: hidden;
       white-space: nowrap;
@@ -56,7 +59,7 @@ const ListItem = styled.li`
 
   &:hover {
     &:after{
-      animation: moveText 0.5s linear both;
+      animation: moveText 0.3s linear both;
 
       @keyframes moveText {
         to{

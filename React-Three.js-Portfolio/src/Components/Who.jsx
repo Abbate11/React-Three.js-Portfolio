@@ -22,6 +22,7 @@ const Left = styled.div`
 
 const Title = styled.h1`
     font-size: 100px;
+    opacity: 0.8;
 `;
 
 
