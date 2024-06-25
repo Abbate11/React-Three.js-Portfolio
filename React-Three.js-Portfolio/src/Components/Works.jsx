@@ -39,7 +39,8 @@ const ListItem = styled.li`
     font-size: 80px;
     font-weight: bold;
     cursor: pointer;
-    color: white;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
     opacity: 0.8;
     position: relative;
 

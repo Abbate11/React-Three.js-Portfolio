@@ -1,4 +1,7 @@
 import React from 'react'
+import { OrbitControls } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import Shape from './Shape';
 import styled from 'styled-components'
 
 const Section = styled.div`
@@ -72,7 +75,12 @@ const Who = () => {
     <Section>
       <Container>
         <Left>
-
+          <Canvas camera={{fov:25, position:[5,5,5]}}>
+            <OrbitControls enableZoom={false} autoRotate={true} enablePan={false}/>
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} />
+            <Shape />
+          </Canvas>
         </Left>
         <Right>
           <Title>Think outside the square space</Title>
