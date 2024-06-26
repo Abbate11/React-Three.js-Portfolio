@@ -11,7 +11,7 @@ Title: Nike TC 7900 Sail
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Shoe(props) {
+export default function Shoe(props) {
   const { nodes, materials } = useGLTF('/Shoe-transformed.glb')
   return (
     <group {...props} dispose={null}>

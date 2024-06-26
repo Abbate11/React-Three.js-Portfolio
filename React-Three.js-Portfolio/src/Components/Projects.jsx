@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Section = styled.div`
-    height: 100vh;
+    height: 90vh;
     scroll-snap-align: center;
+    scroll-snap-stop: always;
     display: flex;
     justify-content: center;
-    padding: 40px;
+    padding: 20px;
 `;
 
 const Container = styled.div`
@@ -17,38 +18,43 @@ const Container = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
+    padding: 20px;
 `;
 
 const TopLeft = styled.div`
     width: 45%;
+    border-radius: 5px;
 `
 
 const BottomLeft = styled.div`
     width: 45%;
+    border-radius: 5px;
 `
 
 const TopRight = styled.div`
     width: 45%;
+    border-radius: 5px;
 `
 
 const BottomRight = styled.div`
     width: 45%;
+    border-radius: 5px;
 `
 
 const Projects = () => {
     return (
         <Section>
-            <Container>
-                <TopLeft>
+            <Container >
+                <TopLeft className='box'>
                     Project1
                 </TopLeft>
-                <BottomLeft>
+                <BottomLeft className='box'>
                     Project2
                 </BottomLeft>
-                <TopRight>
+                <TopRight className='box'>
                     Project3
                 </TopRight>
-                <BottomRight>
+                <BottomRight className='box'>
                     Project4
                 </BottomRight>
             </Container>

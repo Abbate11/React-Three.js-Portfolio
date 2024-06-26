@@ -5,7 +5,8 @@ import Map from './Map';
 
 const Section = styled.div`
   height: 100vh;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 `;
 
 const Container = styled.div`
@@ -14,14 +15,20 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 50px;
+  padding-top: 30px;
+  padding-left: 40px;
 `;
 
 const Left = styled.div`
   flex: 1;
+  width: 70%;
+  height: 90%;
+  border-radius: 5px;
 `;
 
 const Title = styled.h1`
   font-weight: 200;
+  color: white;
 `;
 
 const Form = styled.form`
@@ -32,23 +39,24 @@ const Form = styled.form`
 `;
 const Input = styled.input`
   padding: 20px;
-  background-color: #e8e6e6;
+  background-color: white;
   border: none;
   border-radius: 5px;
 `;
 
 const TextArea = styled.textarea`
   padding: 20px;
-  background-color: #e8e6e6;
+  background-color: white;
   border: none;
   border-radius: 5px;
+  color: grey;
 `;
 
 const Button = styled.button`
   background-color: #da4ea2;
   color: white;
   border: none;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
   border-radius: 5px;
   padding: 20px;
@@ -87,16 +95,16 @@ const handleSubmit = (e) => {
   return (
     <Section>
       <Container>
-        <Left>
+        <Left className='box'>
           <Map />
         </Left>
         <Right>
           <Form ref={ref} onSubmit={handleSubmit}>
-            <Title>Contact Me</Title>
-            <Input placeholder='Name' name='name' />
-            <Input placeholder='Email' name='email'/>
-            <TextArea rows={10} placeholder='Write your message' name='message' />
-            <Button type='submit'>Send</Button>
+            <Title className='textNav'>Contact Me</Title>
+            <Input className='box' placeholder='Name' name='name' />
+            <Input className='box' placeholder='Email' name='email'/>
+            <TextArea className='box' rows={10} placeholder='Write your message' name='message' />
+            <Button className='textBtn box' type='submit'>Send</Button>
             {success && 
               "Your message has been sent. I'll get back to you soon :)"}
           </Form>

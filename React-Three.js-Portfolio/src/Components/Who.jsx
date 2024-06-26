@@ -6,7 +6,8 @@ import styled from 'styled-components'
 
 const Section = styled.div`
     height: 100vh;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     display: flex;
     justify-content: center;
 `;
@@ -25,7 +26,7 @@ const Left = styled.div`
 
 const Title = styled.h1`
     font-size: 100px;
-    opacity: 0.8;
+   color: black;
 `;
 
 
@@ -61,7 +62,7 @@ const Desc = styled.p`
 const Button = styled.button`
     background-color: #da4ea2;
     color: white;
-    font-weight: 500;
+    font-weight: 700;
     width: 120px;
     padding: 10px;
     border: none;
@@ -76,7 +77,7 @@ const Who = () => {
       <Container>
         <Left>
           <Canvas camera={{fov:25, position:[5,5,5]}}>
-            <OrbitControls enableZoom={false} autoRotate={true} enablePan={false}/>
+            <OrbitControls enableZoom={false} autoRotate={true} autoRotateSpeed={5} enablePan={false}/>
             <ambientLight intensity={1} />
             <directionalLight position={[3, 2, 1]} />
             <Shape />
@@ -89,7 +90,7 @@ const Who = () => {
             <Subtitle>Who I am</Subtitle>
           </WhatWeDo>
           <Desc>A Creative designer and developer with a passion for the Arts</Desc>
-          <Button>See our works</Button>
+          <Button className='textBtn box'>See our works</Button>
         </Right>
       </Container>
     </Section>

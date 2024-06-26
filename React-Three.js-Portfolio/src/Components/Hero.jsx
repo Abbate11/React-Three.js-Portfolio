@@ -3,11 +3,11 @@ import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import Nav from './Nav';
 import styled from 'styled-components';
-import { MeshPhongMaterial } from 'three';
 
 const Section = styled.div`
   height: 100vh;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -31,7 +31,7 @@ const Left = styled.div`
 
 const Title = styled.h1`
   font-size: 100px;
-  opacity: 0.8;
+  color: black;
 `;
 
 const WhatWeDo = styled.div`
@@ -57,7 +57,7 @@ const Desc = styled.p`
 const Button = styled.button`
   background-color: #da4ea2;
   color: white;
-  font-weight: 500;
+  font-weight: 700;
   width: 100px;
   padding: 10px;
   border: none;
@@ -101,24 +101,24 @@ const Hero = () => {
             <Subtitle>What I Do</Subtitle>
           </WhatWeDo>
           <Desc>I enjoy creating delightful, human-centered digital experiences.</Desc>
-          <Button>Learn More</Button>
+          <Button className='textBtn box'>Learn More</Button>
         </Left>
         <Right>
           <Canvas style={{ width: '100%', height: '100%' }} shadows>
-            <OrbitControls enableZoom={false} enablePan={false}/>
+            <OrbitControls enableZoom={false} enablePan={false} />
             <ambientLight intensity={1.5} />
             <directionalLight 
             castShadow
-            position={[3, 2, 1]} 
-            intensity={2.5}
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
+            position={[-5, 5, 3]} 
+            intensity={2}
+            // shadow-mapSize-width={1024}
+            // shadow-mapSize-height={1024}
             />
             <Sphere args={[2.3, 250, 250]} position={[0, 0, 0]}>
               <MeshDistortMaterial color="#310a4f" distort={0.4} speed={2} />
             </Sphere>
           </Canvas>
-          <Img src="./img/moon.png" />
+          {/* <Img src="./img/moon.png" /> */}
         </Right>
       </Container>
     </Section>
