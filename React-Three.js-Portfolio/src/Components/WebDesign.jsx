@@ -1,14 +1,15 @@
 import React from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitalControls } from '@react-three/drei'
+import { OrbitControls, Stage } from '@react-three/drei'
+import Desk from './Desk'
 
 const WebDesign = () => {
   return (
-    <Canvas>
+    <Canvas style={{ width: '80%', height: '80%' }} shadows>
       <Stage enviromnet="city" intensity={0.6}>
-
+        <Desk />
       </Stage>
-      <OrbitalControls enableZoom={false}/>
+      <OrbitControls enableZoom={false} enablePan={false}/>
     </Canvas>
   )
 }

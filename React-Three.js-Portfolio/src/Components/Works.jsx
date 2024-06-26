@@ -2,12 +2,14 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import WebDesign from './WebDesign'
 import Development from './Development'
+import DataManagement from './DataManagement'
 import ProductDesign from './ProductDesign'
+import SocialMedia from './SocialMedia'
 
 const data = [
   "Web Design",
   "Development",
-  "Illustration",
+  "Data Management",
   "Product Design",
   "Social Media",
 ];
@@ -91,7 +93,8 @@ const Works = () => {
             </List>
           </Left>
           <Right>
-            {work === "Web Design" ? (<WebDesign/>) : work === "Development" ? (<Development/>) : (<ProductDesign/> )}
+            {work === "Web Design" ? (<WebDesign/>) : work === "Development" ? (<Development/>)
+             : work === "Data Management" ? (<DataManagement/>) : work === "Product Design" ? (<ProductDesign/>) : (<SocialMedia/>)}
           </Right>
         </Container>
     </Section>
