@@ -1,5 +1,6 @@
 import Hero from "./Components/Hero"
 import Who from "./Components/Who"
+import Projects from "./Components/Projects"
 import Works from "./Components/Works"
 import Contact from "./Components/Contact"
 import "./App.css"
@@ -28,6 +29,7 @@ const App = () => {
     <Container>
       <Hero />
       <Who />
+      <Projects />
       <Works />
       <Contact />
     </Container>

@@ -62,8 +62,8 @@ const Nav = () => {
                 <Logo src="./img/logo.png"/>
                 <List>
                     <ListItem>Home</ListItem>
-                    <ListItem>Studio</ListItem>
-                    <ListItem>Works</ListItem>
+                    <ListItem>Projects</ListItem>
+                    <ListItem>Skills</ListItem>
                     <ListItem>Contact</ListItem>
                 </List>
             </Links>
