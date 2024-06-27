@@ -20,8 +20,8 @@ const Map = () => {
     >
       <Geographies
         geography="/features.json"
-        fill="#2C065D"
-        stroke="white"
+        fill="grey"
+        stroke="greenyellow"
         strokeWidth={0.5}
       >
         {({ geographies }) =>

@@ -9,12 +9,12 @@ const Desc = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: black;
+  background-color: greenyellow;
   border-radius: 10px;
   position: absolute;
   top: 100px;
   right: 100px;
-  color: white;
+  color: #dfdfdf;
 
   @media only screen and (max-width: 768px) {
     top: 0;
@@ -34,7 +34,7 @@ const ProductDesign = () => {
           </Stage>
           <OrbitControls enableZoom={false} autoRotate />
       </Canvas>
-      <Desc className="textDesc box">
+      <Desc className="textNav box">
       Crafting intuitive and user-centered product interfaces, from concept to final implementation.
       </Desc>
     </>

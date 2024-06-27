@@ -32,6 +32,7 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   cursor: pointer;
+  color: white;
 `;
 
 const Icons = styled.div`
@@ -63,8 +64,8 @@ const Button = styled.button`
   top: 50px;
   width: 100px;
   padding: 10px;
-  background-color: #da4ea2;
-  color: white;
+  background-color: whitesmoke;
+  color:  greenyellow;
   border: none;
   border-radius: 7px;
   cursor: pointer;

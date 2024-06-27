@@ -33,7 +33,9 @@ const Title = styled.h1`
 const A = styled.a`
   font-size: 75px;
 `
-
+const P = styled.a`
+  color: greenyellow;
+`
 const Right = styled.div`
     flex: 1;
     display: flex;
@@ -53,18 +55,19 @@ const Line = styled.img`
 `;
 
 const Subtitle = styled.h2`
-    color: #da4ea2;
+    color: greenyellow;
     font-size: 20px
 `;
 
 const Desc = styled.p`
     font-size: 24px;
-    color: lightgrey;
+    color: whitesmoke;
+    padding: 30px
 `;
 
 const Button = styled.button`
-    background-color: #da4ea2;
-    color: white;
+    background-color:  whitesmoke;
+    color: greenyellow;
     font-weight: 700;
     width: 120px;
     padding: 10px;
@@ -107,12 +110,12 @@ const Who = () => {
           </Canvas>
         </Left>
         <Right>
-          <Title className='textNav insetBox'>Think outside the [<A>box.</A>]</Title>
+          <Title className='textNav insetBox'>Think outside the [<A>box<P>.</P></A>]</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
             <Subtitle className='textNav'>Who I am</Subtitle>
           </WhatWeDo>
-          <Desc>A Creative designer and developer with a passion for the Arts</Desc>
+          <Desc className='insetBox insetText textDesc'>A Creative designer and developer with a passion for the Arts</Desc>
             <Button onClick={() => scrollToSection('projects')} className='textBtn box'>See my works</Button>
         </Right>
       </Container>

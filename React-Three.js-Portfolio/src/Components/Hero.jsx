@@ -35,6 +35,10 @@ const Title = styled.h1`
   padding: 10px;
 `;
 
+const P = styled.a`
+  color: white;
+`
+
 const WhatWeDo = styled.div`
   display: flex;
   align-items: center;
@@ -46,7 +50,7 @@ const Line = styled.img`
 `;
 
 const Subtitle = styled.h2`
-  color: #da4ea2;
+  color: greenyellow	;
   font-size: 20px;
 `;
 
@@ -56,8 +60,8 @@ const Desc = styled.p`
 `;
 
 const Button = styled.button`
-  background-color: #da4ea2;
-  color: white;
+  background-color:whitesmoke;
+  color: greenyellow;
   font-weight: 700;
   width: 100px;
   padding: 10px;
@@ -117,7 +121,7 @@ const Hero = () => {
       <Nav />
       <Container>
         <Left>
-          <Title className='textNav insetBox'>Think. Make. Solve.</Title>
+          <Title className='textNav insetBox'>Think<P>.</P> Make<P>.</P> Solve<P>.</P></Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
             <Subtitle className='textNav'>What I Do</Subtitle>
@@ -137,7 +141,7 @@ const Hero = () => {
             // shadow-mapSize-height={1024}
             />
             <Sphere args={[2.3, 250, 250]} position={[0, 0, 0]}>
-              <MeshDistortMaterial color="#310a4f" distort={0.4} speed={2} />
+              <MeshDistortMaterial color="greenyellow" distort={0.4} speed={2} />
             </Sphere>
           </Canvas>
           {/* <Img src="./img/moon.png" /> */}
