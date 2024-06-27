@@ -102,6 +102,10 @@ body {
     1px 30px 60px rgba(16,16,16,0.4);
 }
 
+.boxBtn {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px 3px,#D6D6E7 0 3px 0;
+}
+
 .insetBox {
     text-transform: uppercase;
     font-family: verdana;
@@ -129,3 +133,4 @@ body {
     1px 25px 35px rgba(16,16,16,0.2) inset,
     1px 30px 60px rgba(16,16,16,0.4) inset;
 }
+

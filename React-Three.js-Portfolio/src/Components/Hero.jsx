@@ -7,7 +7,6 @@ import styled from 'styled-components';
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: start;
-  scroll-snap-stop: always;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -68,9 +67,9 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: box-shadow .15s,transform .15s;
 
   &:active {
-    transition: 100ms;
     transform: translateY(6px);
     box-shadow: 1px 1px 1px #919191,
         1px 2px 1px #919191,

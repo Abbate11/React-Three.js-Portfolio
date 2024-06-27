@@ -36,8 +36,8 @@ const Map = () => {
         dy={-30}
         connectorProps={{
           stroke: "black",
-          strokeWidth: 2,
-          strokeLinecap: "round"
+          strokeWidth: 1.5,
+          strokeLinecap: "round",
         }}
       >
         <text className="textNav" x="50" y='-10' textAnchor="end" alignmentBaseline="middle" fill="white">

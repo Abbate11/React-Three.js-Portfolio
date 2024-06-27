@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import Map from './Map';
+import Coffee from './Coffee';
 
 const Section = styled.div`
   height: 100vh;
@@ -15,6 +16,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 50px;
+  position: relative;
 `;
 
 const Left = styled.div`
@@ -35,6 +37,7 @@ const Form = styled.form`
   flex-direction: column;
   gap: 25px;
 `;
+
 const Input = styled.input`
   padding: 20px;
   background-color: white;
@@ -59,6 +62,7 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 5px;
   padding: 20px;
+  transition: box-shadow .15s,transform .15s;
 
   &:active {
     transition: 100ms;
@@ -77,32 +81,34 @@ const Button = styled.button`
 const Right = styled.div`
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-left: 100px
+  justify-content: center;
 `;
 
+
+
 const Contact = () => {
+  const ref = useRef();
+  const [success, setSuccess] = useState(null);
 
-const ref = useRef();
-const [success,setSuccess] = useState(null)
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-
-  emailjs
+    emailjs
       .sendForm('service_xxsexf2', 'template_hwrmjbf', ref.current, {
         publicKey: 'LaLSL67fj23MVT4et',
       })
       .then((result) => {
           console.log(result.text);
-          setSuccess(true)
+          setSuccess(true);
         },
         (error) => {
           console.log(error.text);
-          setSuccess(false)
+          setSuccess(false);
         },
       );
-}
+  };
 
   return (
     <Section>
@@ -121,9 +127,13 @@ const handleSubmit = (e) => {
               "Your message has been sent. I'll get back to you soon :)"}
           </Form>
         </Right>
+         <div>
+          <Coffee />
+         </div>
       </Container>
     </Section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
+

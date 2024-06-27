@@ -51,16 +51,16 @@ const ListItem = styled.li`
     -webkit-text-stroke: 1px #28282B;
     position: relative;
     padding: 5px;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: 10px;
+    transition: box-shadow .25s ease-out, transform .25s;
 
     &:hover {
-      border: 1px solid grey;
+      border: 2px solid white;
     }
 
     &:active {
-    transition: 100ms;
-    transform: translateY(6px);
+    transform: translateY(4px);
     box-shadow: 1px 1px 1px #919191 inset,
         1px 2px 1px #919191 inset,
         1px 3px 1px #919191 inset,
@@ -69,7 +69,7 @@ const ListItem = styled.li`
     1px 22px 10px rgba(16,16,16,0.2) inset,
     1px 25px 35px rgba(16,16,16,0.2) inset,
     1px 30px 60px rgba(16,16,16,0.4) inset;
-    border: none;
+    border: 2px solid transparent;
   }
 `;
 

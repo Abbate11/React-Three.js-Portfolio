@@ -74,9 +74,9 @@ const Button = styled.button`
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: box-shadow .15s,transform .15s;
 
     &:active {
-    transition: 100ms;
     transform: translateY(6px);
     box-shadow: 1px 1px 1px #919191,
         1px 2px 1px #919191,
