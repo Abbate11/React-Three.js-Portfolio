@@ -11,12 +11,10 @@ const Section = styled.div`
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: space-between;
   gap: 50px;
-  padding-top: 30px;
-  padding-left: 40px;
 `;
 
 const Left = styled.div`
@@ -27,8 +25,8 @@ const Left = styled.div`
 `;
 
 const Title = styled.h1`
-  font-weight: 200;
   color: white;
+  text-align: center;
 `;
 
 const Form = styled.form`
@@ -42,6 +40,7 @@ const Input = styled.input`
   background-color: white;
   border: none;
   border-radius: 5px;
+  color: grey;
 `;
 
 const TextArea = styled.textarea`
@@ -60,6 +59,19 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 5px;
   padding: 20px;
+
+  &:active {
+    transition: 100ms;
+    transform: translateY(6px);
+    box-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+    1px 9px 3px rgba(16,16,16,0.4),
+    1px 11px 5px rgba(16,16,16,0.2),
+    1px 13px 17px rgba(16,16,16,0.2),
+    1px 15px 30px rgba(16,16,16,0.4);
+  }
 `;
 
 const Right = styled.div`
@@ -95,7 +107,7 @@ const handleSubmit = (e) => {
   return (
     <Section>
       <Container>
-        <Left className='box'>
+        <Left>
           <Map />
         </Left>
         <Right>

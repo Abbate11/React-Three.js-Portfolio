@@ -32,6 +32,7 @@ const Left = styled.div`
 const Title = styled.h1`
   font-size: 100px;
   color: black;
+  padding: 10px;
 `;
 
 const WhatWeDo = styled.div`
@@ -63,6 +64,19 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+  &:active {
+    transition: 100ms;
+    transform: translateY(6px);
+    box-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+    1px 9px 3px rgba(16,16,16,0.4),
+    1px 11px 5px rgba(16,16,16,0.2),
+    1px 13px 17px rgba(16,16,16,0.2),
+    1px 15px 30px rgba(16,16,16,0.4);
+  }
 `;
 
 const Right = styled.div`
@@ -90,18 +104,26 @@ const Img = styled.img`
 `;
 
 const Hero = () => {
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <Section>
       <Nav />
       <Container>
         <Left>
-          <Title>Think. Make. Solve.</Title>
+          <Title className='textNav insetBox'>Think. Make. Solve.</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
-            <Subtitle>What I Do</Subtitle>
+            <Subtitle className='textNav'>What I Do</Subtitle>
           </WhatWeDo>
           <Desc>I enjoy creating delightful, human-centered digital experiences.</Desc>
-          <Button className='textBtn box'>Learn More</Button>
+          <Button onClick={() => scrollToSection('works')} className='textBtn box'>Learn More</Button>
         </Left>
         <Right>
           <Canvas style={{ width: '100%', height: '100%' }} shadows>

@@ -27,9 +27,12 @@ const Left = styled.div`
 const Title = styled.h1`
     font-size: 100px;
    color: black;
+   padding: 10px;
 `;
 
-
+const A = styled.a`
+  font-size: 75px;
+`
 
 const Right = styled.div`
     flex: 1;
@@ -68,9 +71,29 @@ const Button = styled.button`
     border: none;
     border-radius: 5px;
     cursor: pointer;
+
+    &:active {
+    transition: 100ms;
+    transform: translateY(6px);
+    box-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+    1px 9px 3px rgba(16,16,16,0.4),
+    1px 11px 5px rgba(16,16,16,0.2),
+    1px 13px 17px rgba(16,16,16,0.2),
+    1px 15px 30px rgba(16,16,16,0.4);
+  }
 `;
 
 const Who = () => {
+
+  const scrollToSection = (id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
 
   return (
     <Section>
@@ -84,13 +107,13 @@ const Who = () => {
           </Canvas>
         </Left>
         <Right>
-          <Title>Think outside the square space</Title>
+          <Title className='textNav insetBox'>Think outside the [<A>box.</A>]</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
-            <Subtitle>Who I am</Subtitle>
+            <Subtitle className='textNav'>Who I am</Subtitle>
           </WhatWeDo>
           <Desc>A Creative designer and developer with a passion for the Arts</Desc>
-          <Button className='textBtn box'>See our works</Button>
+            <Button onClick={() => scrollToSection('projects')} className='textBtn box'>See my works</Button>
         </Right>
       </Container>
     </Section>

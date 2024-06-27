@@ -11,6 +11,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
 `;
 
 const Links = styled.div`
@@ -54,6 +55,19 @@ const Button = styled.button`
   border: none;
   border-radius: 7px;
   cursor: pointer;
+
+  &:active {
+    transition: 100ms;
+    transform: translateY(6px);
+    box-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+    1px 9px 3px rgba(16,16,16,0.4),
+    1px 11px 5px rgba(16,16,16,0.2),
+    1px 13px 17px rgba(16,16,16,0.2),
+    1px 15px 30px rgba(16,16,16,0.4);
+  }
 `;
 
 const Nav = () => {
@@ -83,7 +97,7 @@ const Nav = () => {
             <a href="https://github.com/abbate11" target="_blank" rel="noopener noreferrer">
               <Icon className='box' src="./img/github.png" alt="GitHub" />
             </a>
-            <Button className='textBtn box'>Hire Now</Button>
+            <Button onClick={() => scrollToSection('contact')} className='textBtn box'>Hire Now</Button>
           </Icons>
         </Container>
       </Section>

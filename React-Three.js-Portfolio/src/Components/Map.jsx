@@ -14,9 +14,9 @@ const Map = () => {
       projectionConfig={{
         rotate: [81.0, -28.5, 0], // Adjust rotation to center on Orlando
         center: [0, 0], // Center on the map
-        scale: 1200 // Adjust scale as needed
+        scale: 770 // Adjust scale as needed
       }}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "140%", height: "120%" }}
     >
       <Geographies
         geography="/features.json"
@@ -32,15 +32,15 @@ const Map = () => {
       </Geographies>
       <Annotation
         subject={[-81.3792, 28.5383]} // Coordinates for Orlando
-        dx={-90}
+        dx={90}
         dy={-30}
         connectorProps={{
-          stroke: "white",
+          stroke: "black",
           strokeWidth: 2,
           strokeLinecap: "round"
         }}
       >
-        <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="white">
+        <text className="textNav" x="50" y='-10' textAnchor="end" alignmentBaseline="middle" fill="white">
           {"Orlando"}
         </text>
       </Annotation>
