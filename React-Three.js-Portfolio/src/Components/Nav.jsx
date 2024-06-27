@@ -44,6 +44,19 @@ const Icon = styled.img`
   height: 60px;
   cursor: pointer;
   border-radius: 5px;
+
+  &:active {
+    transition: 100ms;
+    transform: translateY(6px);
+    box-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+    1px 9px 3px rgba(16,16,16,0.4),
+    1px 11px 5px rgba(16,16,16,0.2),
+    1px 13px 17px rgba(16,16,16,0.2),
+    1px 15px 30px rgba(16,16,16,0.4);
+  }
 `;
 
 const Button = styled.button`

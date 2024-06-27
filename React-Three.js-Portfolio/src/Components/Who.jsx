@@ -101,7 +101,7 @@ const Who = () => {
         <Left>
           <Canvas camera={{fov:25, position:[5,5,5]}}>
             <OrbitControls enableZoom={false} autoRotate={true} autoRotateSpeed={5} enablePan={false}/>
-            <ambientLight intensity={1} />
+            <ambientLight intensity={0.5} />
             <directionalLight position={[3, 2, 1]} />
             <Shape />
           </Canvas>
