@@ -118,7 +118,7 @@ const Projects = () => {
                     <Video loop ref={videoRef}>
                         <source src='./video/Cards.mp4' type='video/mp4' />
                     </Video>
-                    <Title>Project2</Title>
+                    <Title>Travel Cards</Title>
                     <A href="https://abbate11.github.io/CardsPractice/" target="_blank" rel="noopener noreferrer">
                         <Button className='textBtn'>View live</Button>
                     </A>
