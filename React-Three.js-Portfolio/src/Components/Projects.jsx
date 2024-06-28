@@ -49,23 +49,23 @@ const Project = styled.div`
     1px 13px 17px rgba(16,16,16,0.2),
     1px 15px 30px rgba(16,16,16,0.4);
   }
-`
+`;
 
 const Video = styled.video`
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
-`
+`;
 
 const Title = styled.h3`
     z-index: 101;
-`
+`;
+
 const Button = styled.p`
     z-index: 101;
     margin-bottom: 15px;
     background-color: whitesmoke;
-    width: 100px;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -91,18 +91,22 @@ const A = styled.a`
     &:visited {
         color: inherit;
     }
-`
+`;
 
 const Projects = () => {
-    const videoRef = useRef(null);
+    const videoRefs = useRef([]);
 
-    const handleMouseEnter = () => {
-        videoRef.current.play();
+    const handleMouseEnter = (index) => {
+        if (videoRefs.current[index]) {
+            videoRefs.current[index].play();
+        }
     };
 
-    const handleMouseLeave = () => {
-        videoRef.current.pause();
-        videoRef.current.currentTime = 0;
+    const handleMouseLeave = (index) => {
+        if (videoRefs.current[index]) {
+            videoRefs.current[index].pause();
+            videoRefs.current[index].currentTime = 0;
+        }
     };
 
     return (
@@ -114,8 +118,12 @@ const Projects = () => {
                         <Button className='textBtn'>View live</Button>
                     </A>
                 </Project>
-                <Project className='box' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                    <Video loop ref={videoRef}>
+                <Project
+                    className='box'
+                    onMouseEnter={() => handleMouseEnter(1)}
+                    onMouseLeave={() => handleMouseLeave(1)}
+                >
+                    <Video loop ref={(el) => (videoRefs.current[1] = el)}>
                         <source src='./video/Cards.mp4' type='video/mp4' />
                     </Video>
                     <Title>Travel Cards</Title>
@@ -123,10 +131,17 @@ const Projects = () => {
                         <Button className='textBtn'>View live</Button>
                     </A>
                 </Project>
-                <Project className='box'>
-                    <Title>Project3</Title>
-                    <A href="" target="_blank" rel="noopener noreferrer">
-                        <Button className='textBtn'>View live</Button>
+                <Project
+                    className='box'
+                    onMouseEnter={() => handleMouseEnter(2)}
+                    onMouseLeave={() => handleMouseLeave(2)}
+                >
+                    <Video loop ref={(el) => (videoRefs.current[2] = el)}>
+                        <source src='./video/Social.mp4' type='video/mp4' />
+                    </Video>
+                    <Title>Social Network API</Title>
+                    <A href="https://github.com/Abbate11/SocialNetworkAPI" target="_blank" rel="noopener noreferrer">
+                        <Button className='textBtn'>View Repo</Button>
                     </A>
                 </Project>
                 <Project className='box'>
@@ -141,3 +156,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
