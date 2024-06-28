@@ -108,6 +108,9 @@ const Nav = () => {
             <a href="https://www.linkedin.com/in/christian-abbate-875122294" target="_blank" rel="noopener noreferrer">
               <Icon className='box' src="./img/linkedin.png" alt="LinkedIn" />
             </a>
+            <a href="https://www.buymeacoffee.com/Abbate11" target="_blank" rel="noopener noreferrer">
+              <Icon className='box' src="./img/bmc-button.png" alt="BMC" />
+            </a>
             <a href="https://github.com/abbate11" target="_blank" rel="noopener noreferrer">
               <Icon className='box' src="./img/github.png" alt="GitHub" />
             </a>

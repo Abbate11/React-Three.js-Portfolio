@@ -114,12 +114,30 @@ body {
     box-shadow: 1px 1px 1px #919191 inset,
         1px 2px 1px #919191 inset,
         1px 3px 1px #919191 inset,
-        1px 4px 1px #919191 inset,
+        1px 3px 1px #919191 inset,
     1px 18px 6px rgba(16,16,16,0.4) inset,
     1px 22px 10px rgba(16,16,16,0.2) inset,
     1px 25px 35px rgba(16,16,16,0.2) inset,
     1px 30px 60px rgba(16,16,16,0.4) inset;
 }
+
+.boxBmc {
+    text-transform: uppercase;
+    font-family: verdana;
+    font-weight: 700;
+    color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 2px 1px 1px #919191,
+        2px -2px 1px #919191,
+        3px -3px 1px #919191,
+    2px 12px 6px rgba(16,16,16,0.4),
+    -3px 15px 10px rgba(16,16,16,0.2),
+    3px 18px 10px rgba(16,16,16,0.2),
+    -4px 21px 35px rgba(16,16,16,0.2),
+    4px 24px 35px rgba(16,16,16,0.2),
+    5px 25px 60px rgba(16,16,16,0.4);
+}
+
 
 .insetText {
     text-transform: uppercase;

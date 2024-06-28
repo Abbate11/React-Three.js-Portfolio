@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import styled from 'styled-components';
 import Map from './Map';
-import Coffee from './Coffee';
 
 const Section = styled.div`
   height: 100vh;
@@ -87,6 +86,31 @@ const Right = styled.div`
 `;
 
 
+const Bmc = styled.img`
+  position: absolute;
+  color: white;
+  width: 150px;
+  height: 150px;
+  bottom: 40px;
+  right: 40px;
+  cursor: pointer;
+  transition: box-shadow .15s,transform .15s;
+
+  &:active {
+    transform: translate(1px, -4px);
+    box-shadow: 2px 1px 1px #919191,
+        2px -2px 1px #919191,
+        3px -2px 1px #919191,
+    1px 6px 3px rgba(16,16,16,0.4),
+    -2px 7px 4px rgba(16,16,16,0.2),
+    2px 9px 5px rgba(16,16,16,0.2),
+    -2px 10px 15px rgba(16,16,16,0.2),
+    2px 11px 20px rgba(16,16,16,0.2),
+    3px 12px 30px rgba(16,16,16,0.4);
+  }
+`
+
+
 
 const Contact = () => {
   const ref = useRef();
@@ -127,9 +151,9 @@ const Contact = () => {
               "Your message has been sent. I'll get back to you soon :)"}
           </Form>
         </Right>
-         <div>
-          <Coffee />
-         </div>
+          <a href='https://www.buymeacoffee.com/Abbate11'>
+            <Bmc className='boxBmc' src='./img/bmc-qr.png'/>
+          </a>
       </Container>
     </Section>
   );

@@ -72,8 +72,8 @@ const Button = styled.p`
     transition: box-shadow .30s,transform .20s;
 
     &:hover{
-        box-shadow: rgba(45, 35, 66, 0.4) -1px 2px 4px,
-                    rgba(45, 35, 66, 0.3) 1px 7px 13px 3px,
+        box-shadow: rgba(12, 5, 28, 0.3) -1px 2px 4px,
+                    rgba(12, 5, 28, 0.3) 1px 7px 13px 3px,
                     #D6D6E7 1px 3px 0;
     }
 
