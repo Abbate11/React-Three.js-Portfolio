@@ -36,7 +36,7 @@ const Left = styled.div`
 `;
 
 const List = styled.ul`
-    list-style: square;
+    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 30px;

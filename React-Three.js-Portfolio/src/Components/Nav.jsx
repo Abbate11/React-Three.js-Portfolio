@@ -4,6 +4,11 @@ import styled from 'styled-components';
 const Section = styled.div`
   display: flex;
   justify-content: center;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
+    
 `;
 
 const Container = styled.div`
@@ -12,6 +17,11 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin-top: 5px;
+  }
 `;
 
 const Links = styled.div`
@@ -22,12 +32,20 @@ const Links = styled.div`
 
 const Logo = styled.img`
   height: 100px;
+
+  @media only screen and (max-width: 768px) {
+    height: 70px;
+  }
 `;
 
 const List = styled.ul`
   display: flex;
   gap: 70px;
   list-style: none;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const ListItem = styled.li`
@@ -39,6 +57,10 @@ const Icons = styled.div`
   display: flex;
   align-items: center;
   gap: 15px;
+
+  @media only screen and (max-width: 768px) {
+    padding-right: 10px;
+  }
 `;
 
 const Icon = styled.img`
@@ -57,6 +79,10 @@ const Icon = styled.img`
     1px 11px 5px rgba(16,16,16,0.2),
     1px 13px 17px rgba(16,16,16,0.2),
     1px 15px 30px rgba(16,16,16,0.4);
+  }
+
+  @media only screen and (max-width: 768px) {
+    height: 40px;
   }
 `;
 
@@ -81,6 +107,10 @@ const Button = styled.button`
     1px 11px 5px rgba(16,16,16,0.2),
     1px 13px 17px rgba(16,16,16,0.2),
     1px 15px 30px rgba(16,16,16,0.4);
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: none;
   }
 `;
 

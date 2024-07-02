@@ -30,7 +30,7 @@ const App = () => {
       <div id="home">
         <Hero />
       </div>
-      <div id="works">
+      {/* <div id="works">
         <Works />
       </div>
       <div id="who">
@@ -41,7 +41,7 @@ const App = () => {
       </div>
       <div id="contact">
         <Contact />
-      </div>
+      </div> */}
     </Container>
   );
 }

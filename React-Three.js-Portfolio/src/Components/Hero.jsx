@@ -10,6 +10,10 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    height: 100vh;
+  }
 `;
 
 const Container = styled.div`
@@ -18,6 +22,13 @@ const Container = styled.div`
   width: 70%;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Left = styled.div`
@@ -26,12 +37,24 @@ const Left = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 10px;
+
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    align-items: center;
+    gap: 0;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 100px;
   color: black;
   padding: 10px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 50px;
+    margin: 10px;
+    margin-top: 20px;
+  }
 `;
 
 const P = styled.a`
@@ -42,6 +65,10 @@ const WhatWeDo = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media only screen and (max-width: 768px) {
+    padding-top: 10px;
+  }
 `;
 
 const Line = styled.img`
@@ -56,6 +83,11 @@ const Subtitle = styled.h2`
 const Desc = styled.p`
   font-size: 24px;
   color: lightgrey;
+
+  @media only screen and (max-width: 768px) {
+    padding-bottom: 10px;
+    text-align: center;
+  }
 `;
 
 const Button = styled.button`
@@ -80,31 +112,22 @@ const Button = styled.button`
     1px 13px 17px rgba(16,16,16,0.2),
     1px 15px 30px rgba(16,16,16,0.4);
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 150px;
+  }
 `;
 
 const Right = styled.div`
   flex: 3;
   position: relative;
-`;
 
-const Img = styled.img`
-  width: 700px;
-  height: 800px;
-  object-fit: contain;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  animation: animate 1.8s infinite ease alternate;
-
-  @keyframes animate {
-    to {
-      transform: translateY(30px);
-    }
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    width: 100%;
   }
 `;
+
 
 const Hero = () => {
 
@@ -129,21 +152,18 @@ const Hero = () => {
           <Button onClick={() => scrollToSection('works')} className='textBtn box'>Learn More</Button>
         </Left>
         <Right>
-          <Canvas style={{ width: '100%', height: '100%' }} shadows>
+          <Canvas shadows>
             <OrbitControls enableZoom={false} enablePan={false} />
             <ambientLight intensity={1.5} />
             <directionalLight 
             castShadow
             position={[-5, 5, 3]} 
             intensity={2}
-            // shadow-mapSize-width={1024}
-            // shadow-mapSize-height={1024}
             />
             <Sphere args={[2.3, 250, 250]} position={[0, 0, 0]}>
               <MeshDistortMaterial color="greenyellow" distort={0.4} speed={2} />
             </Sphere>
           </Canvas>
-          {/* <Img src="./img/moon.png" /> */}
         </Right>
       </Container>
     </Section>
