@@ -16,6 +16,10 @@ const Container = styled.div`
   justify-content: space-between;
   gap: 50px;
   position: relative;
+
+  @media only screen and (max-width: 768px) {
+    gap: 0;
+  }
 `;
 
 const Left = styled.div`
@@ -23,6 +27,10 @@ const Left = styled.div`
   width: 70%;
   height: 90%;
   border-radius: 5px;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Title = styled.h1`
@@ -35,6 +43,11 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 25px;
+
+  @media only screen and (max-width: 768px) {
+    width: 90%;
+    margin-top: 20%;
+  }
 `;
 
 const Input = styled.input`
@@ -83,6 +96,11 @@ const Right = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    justify-content: flex-start;
+  }
 `;
 
 
@@ -95,6 +113,11 @@ const Bmc = styled.img`
   right: 40px;
   cursor: pointer;
   transition: box-shadow .15s,transform .15s;
+
+  @media only screen and (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+  }
 
   &:active {
     transform: translate(1px, -4px);
@@ -110,6 +133,13 @@ const Bmc = styled.img`
   }
 `
 
+const M = styled.p`
+  font-size: 15px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+`
 
 
 const Contact = () => {
@@ -148,7 +178,7 @@ const Contact = () => {
             <TextArea className='box' rows={10} placeholder='Write your message' name='message' />
             <Button className='textBtn box' type='submit'>Send</Button>
             {success && 
-              "Your message has been sent. I'll get back to you soon :)"}
+              <M className='textNav'>"Your message has been sent. I'll get back to you soon :)"</M>}
           </Form>
         </Right>
           <a href='https://www.buymeacoffee.com/Abbate11'>

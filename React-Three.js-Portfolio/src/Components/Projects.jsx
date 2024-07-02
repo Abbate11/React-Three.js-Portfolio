@@ -6,6 +6,10 @@ const Section = styled.div`
     display: flex;
     justify-content: center;
     padding: 20px;
+
+    @media only screen and (max-width: 768px) {
+    height: 190vh;
+  }
 `;
 
 const Container = styled.div`
@@ -18,6 +22,16 @@ const Container = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
+
+    @media only screen and (max-width: 768px) {
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+  }
 `;
 
 const Project = styled.div`
@@ -30,6 +44,11 @@ const Project = styled.div`
     position: relative;
     overflow: hidden;
     transition: text-shadow .2s, box-shadow .3s,transform .3s;
+
+    @media only screen and (max-width: 768px) {
+    width: 100%;
+    height: 300px;
+  }
 
     &:hover {
     transform: translateY(4px);
@@ -70,6 +89,13 @@ const Button = styled.p`
     border-radius: 5px;
     cursor: pointer;
     transition: box-shadow .30s,transform .20s;
+
+    @media only screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+  }
 
     &:hover{
         box-shadow: rgba(12, 5, 28, 0.3) -1px 2px 4px,
