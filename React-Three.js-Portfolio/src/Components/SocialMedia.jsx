@@ -32,7 +32,7 @@ const Desc = styled.div`
 const SocialMedia = () => {
   return (
     <>
-      <Canvas style={{ width: '100%', height: '100%' }} shadows camera={{ zoom: .9 }}>
+      <Canvas style={{ width: '100%', height: '100%' }} shadows camera={{ zoom: 1 }}>
         <Stage enviromnet="city" intensity={0.6}>
           <Icons />
         </Stage>

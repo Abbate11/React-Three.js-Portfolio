@@ -32,7 +32,7 @@ const Desc = styled.div`
 const ProductDesign = () => {
   return (
     <>
-      <Canvas style={{ width: '100%', height: '100%' }} shadows camera={{ zoom: .7 }}>
+      <Canvas style={{ width: '100%', height: '100%' }} shadows camera={{ zoom: 1 }}>
           <Stage environment="city" intensity={0.6}>
             <Shoe />
           </Stage>

@@ -50,6 +50,7 @@ const Title = styled.h1`
   font-size: 100px;
   color: black;
   padding: 10px;
+  padding-right: 50px;
 
   @media only screen and (max-width: 768px) {
     font-size: 60px;
@@ -125,7 +126,6 @@ const Button = styled.button`
 
 const Right = styled.div`
   flex: 3;
-  position: relative;
 
   @media only screen and (max-width: 768px) {
     flex: 1;

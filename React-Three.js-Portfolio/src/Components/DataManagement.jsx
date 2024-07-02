@@ -32,7 +32,7 @@ const Desc = styled.div`
 const DataManagement = () => {
   return (
     <>
-      <Canvas style={{ width: '100%', height: '100%' }} shadows camera={{ zoom: .6 }}>
+      <Canvas style={{ width: '100%', height: '100%' }} shadows camera={{ zoom: .8 }}>
         <Stage enviromnet="city" intensity={0.6}>
           <Data />
         </Stage>

@@ -33,7 +33,7 @@ const Desc = styled.div`
 const Development = () => {
   return (
     <>
-      <Canvas style={{ width: '100%', height: '100%' }} shadows camera={{ position: [0, 0, 5], zoom: 1 }}>
+      <Canvas style={{ width: '100%', height: '100%' }} shadows camera={{ position: [0, 0, 5], zoom: 1.1 }}>
         <Stage enviromnet="city" intensity={0.6}>
           <Develop />
         </Stage>
