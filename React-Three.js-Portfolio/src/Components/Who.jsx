@@ -10,6 +10,10 @@ const Section = styled.div`
     scroll-snap-stop: always;
     display: flex;
     justify-content: center;
+
+    @media only screen and (max-width: 768px) {
+    height: 100vh;
+  }
 `;
 
 const Container = styled.div`
@@ -18,20 +22,43 @@ const Container = styled.div`
     width: 70%;
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
 `;
 
 const Left = styled.div`
     flex: 1;
+
+    @media only screen and (max-width: 768px) {
+    flex: 2;
+    width: 100%;
+  }
 `;
 
 const Title = styled.h1`
     font-size: 100px;
    color: black;
    padding: 10px;
+
+   @media only screen and (max-width: 768px) {
+    font-size: 60px;
+    margin: 10px;
+    margin-top: 20px;
+  }
 `;
 
 const A = styled.a`
   font-size: 75px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 40px;
+  }
 `
 const P = styled.a`
   color: greenyellow;
@@ -42,27 +69,53 @@ const Right = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+
+    @media only screen and (max-width: 768px) {
+    flex: 1;
+    align-items: center;
+    gap: 0;
+    padding-top: 15px;
+  }
 `;
 
 const WhatWeDo = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
+
+    @media only screen and (max-width: 768px) {
+    padding-top: 10px;
+  }
 `;
 
 const Line = styled.img`
     height: 5px;
+
+    @media only screen and (max-width: 768px) {
+    padding-top: 5px;
+  }
 `;
 
 const Subtitle = styled.h2`
     color: greenyellow;
-    font-size: 20px
+    font-size: 20px;
+
+    @media only screen and (max-width: 768px) {
+    
+  }
 `;
 
 const Desc = styled.p`
     font-size: 24px;
     color: whitesmoke;
-    padding: 30px
+    padding: 30px;
+
+    @media only screen and (max-width: 768px) {
+    padding-bottom: 20px;
+    text-align: center;
+    margin: 10px 10px;
+    font-size: 15px;
+  }
 `;
 
 const Button = styled.button`
@@ -75,6 +128,11 @@ const Button = styled.button`
     border-radius: 5px;
     cursor: pointer;
     transition: box-shadow .15s,transform .15s;
+
+    @media only screen and (max-width: 768px) {
+    width: 150px;
+    margin-top: 15px;
+  }
 
     &:active {
     transform: translateY(6px);

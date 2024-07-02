@@ -52,9 +52,9 @@ const Title = styled.h1`
   padding: 10px;
 
   @media only screen and (max-width: 768px) {
-    font-size: 50px;
+    font-size: 60px;
     margin: 10px;
-    margin-top: 20px;
+    margin-top: 15px;
   }
 `;
 
@@ -74,6 +74,10 @@ const WhatWeDo = styled.div`
 
 const Line = styled.img`
   height: 5px;
+
+  @media only screen and (max-width: 768px) {
+    padding-top: 5px;
+  }
 `;
 
 const Subtitle = styled.h2`

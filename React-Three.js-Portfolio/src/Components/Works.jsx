@@ -31,6 +31,7 @@ const Container = styled.div`
     @media only screen and (max-width: 768px) {
     width: 100%;
     flex-direction: column;
+    justify-content: center;
   }
 `;
 
@@ -97,6 +98,12 @@ const ListItem = styled.li`
 
 const Right = styled.div`
     flex: 1;
+
+    @media only screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Works = () => {

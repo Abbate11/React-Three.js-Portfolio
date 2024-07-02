@@ -33,10 +33,10 @@ const App = () => {
       <div id="works">
         <Works />
       </div>
-      {/* <div id="who">
+      <div id="who">
         <Who />
       </div>
-      <div id="projects">
+      {/* <div id="projects">
         <Projects />
       </div>
       <div id="contact">
