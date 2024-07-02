@@ -30,10 +30,10 @@ const App = () => {
       <div id="home">
         <Hero />
       </div>
-      {/* <div id="works">
+      <div id="works">
         <Works />
       </div>
-      <div id="who">
+      {/* <div id="who">
         <Who />
       </div>
       <div id="projects">

@@ -17,7 +17,11 @@ const Desc = styled.div`
   color: #dfdfdf;
 
   @media only screen and (max-width: 768px) {
-    top: 0;
+    font-size: 12px;
+    padding: 15px;
+    width: 320px;
+    height: 50px;
+    top: 20px;
     bottom: 0;
     left: 0;
     right: 0;

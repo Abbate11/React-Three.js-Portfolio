@@ -42,6 +42,7 @@ const Left = styled.div`
     flex: 1;
     align-items: center;
     gap: 0;
+    padding-top: 15px;
   }
 `;
 

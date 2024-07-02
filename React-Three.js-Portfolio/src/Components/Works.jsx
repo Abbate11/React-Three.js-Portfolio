@@ -27,12 +27,22 @@ const Container = styled.div`
     width: 70%;
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 
 const Left = styled.div`
     flex: 1;
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: 768px) {
+    padding: 0px 5px;
+    justify-content: center;
+  }
 `;
 
 const List = styled.ul`
@@ -41,6 +51,10 @@ const List = styled.ul`
     flex-direction: column;
     gap: 30px;
     white-space: nowrap;
+
+    @media only screen and (max-width: 768px) {
+    gap: 10px;
+  }
 `;
 
 const ListItem = styled.li`
@@ -55,8 +69,16 @@ const ListItem = styled.li`
     border-radius: 10px;
     transition: box-shadow .25s ease-out, transform .25s;
 
+    @media only screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+
     &:hover {
       border: 2px solid white;
+
+      @media only screen and (max-width: 768px) {
+        border: 2px solid transparent;
+      }
     }
 
     &:active {
