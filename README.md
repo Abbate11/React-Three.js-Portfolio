@@ -9,7 +9,7 @@ This project is a personal portfolio website built using React, showcasing inter
 ## Features
 
 - **React**: Utilized for building a dynamic and interactive user interface.
-- **Three.js**: Integrated to create and display impressive 3D models and animations.
+- **Three.js**: Integrated to create and display 3D models and animations.
 - **Styled Components**: Employed for styling React components with a clean, modular approach.
 - **Mobile Responsive**: Designed to provide an optimal viewing experience across various devices and screen sizes.
 
