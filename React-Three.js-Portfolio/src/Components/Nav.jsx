@@ -4,22 +4,30 @@ import styled from 'styled-components';
 const Section = styled.div`
   display: flex;
   justify-content: center;
-
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-  }
-    
 `;
 
 const Container = styled.div`
-  width: 70%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1700px) {
+    width: 90%;
+    margin: 20px 20px 0px 20px;
+  }
+
+  @media screen and (max-width: 1100px) {
     width: 100%;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  @media only screen and (max-width: 730px) {
     margin-top: 5px;
   }
 `;
@@ -28,24 +36,98 @@ const Links = styled.div`
   display: flex;
   align-items: center;
   gap: 50px;
+
+  @media screen and (max-width: 2000px) {
+    gap: 10px;
+  }
+
+  @media screen and (max-width: 1700px) {
+    gap: 0px
+  }
+
+  @media screen and (max-width: 1450px) {
+    gap: 0px;
+  }
+
+  @media screen and (max-width: 1250px) {
+    gap: 0px;
+  }
 `;
 
 const Logo = styled.img`
-  height: 100px;
+  height: 90px;
+  width: 80px;
+  border-radius: 20px;
 
-  @media only screen and (max-width: 768px) {
+  @media screen and (max-width: 2000px) {
+    height: 90px;
+  }
+
+  @media screen and (max-width: 1700px) {
+    height: 90px
+  }
+
+  @media screen and (max-width: 1450px) {
+    height: 80px
+  }
+
+  @media screen and (max-width: 1250px) {
+    height: 75px
+  }
+
+  @media only screen and (max-width: 1000px) {
     height: 70px;
+  }
+
+  @media only screen and (max-width: 730px) {
+    height: 90px;
   }
 `;
 
 const List = styled.ul`
   display: flex;
-  gap: 70px;
+  gap: 110px;
   list-style: none;
+  font-size: 125%;
+
+  @media screen and (max-width: 2000px) {
+    font-size: 110%;
+  }
+
+  @media screen and (max-width: 1700px) {
+    gap: 90px;
+    font-size: 110%;
+  }
+
+  @media screen and (max-width: 1450px) {
+    gap: 70px;
+    font-size: 105%;
+  }
+
+  @media screen and (max-width: 1250px) {
+    gap: 50px;
+    font-size: 100%;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    gap: 40px;
+    font-size: 95%;
+  }
+
+  @media screen and (max-width: 900px) {
+    gap: 30px;
+    font-size: 90%;
+  }
 
   @media only screen and (max-width: 768px) {
+    gap: 20px;
+    font-size: 85%;
+  }
+
+  @media screen and (max-width: 730px) {
     display: none;
   }
+
 `;
 
 const ListItem = styled.li`
@@ -58,8 +140,8 @@ const Icons = styled.div`
   align-items: center;
   gap: 15px;
 
-  @media only screen and (max-width: 768px) {
-    padding-right: 10px;
+  @media only screen and (max-width: 750px) {
+    justify-content: space-between;
   }
 `;
 
@@ -81,15 +163,44 @@ const Icon = styled.img`
     1px 15px 30px rgba(16,16,16,0.4);
   }
 
+  @media screen and (max-width: 2000px) {
+    height: 55px;
+  }
+
+  @media screen and (max-width: 1700px) {
+    height: 50px;
+  }
+
+  @media screen and (max-width: 1450px) {
+    height: 50px;
+  }
+
+  @media screen and (max-width: 1250px) {
+    height: 45px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    height: 45px;
+  }
+
+  @media screen and (max-width: 900px) {
+    height: 45px;
+  }
+
   @media only screen and (max-width: 768px) {
     height: 40px;
+  }
+
+  @media screen and (max-width: 730px) {
+    height: 50px;
   }
 `;
 
 const Button = styled.button`
-  top: 50px;
   width: 100px;
-  padding: 10px;
+  height: 60px;
+  font-size: 120%;
+  letter-spacing: 1.5px;
   background-color: whitesmoke;
   color:  greenyellow;
   border: none;
@@ -109,8 +220,48 @@ const Button = styled.button`
     1px 15px 30px rgba(16,16,16,0.4);
   }
 
+  @media screen and (max-width: 2000px) {
+    width: 100px;
+    height: 55px;
+    letter-spacing: 1px;
+    font-size: 120%;
+  }
+
+  @media screen and (max-width: 1700px) {
+    width: 100px;
+    height: 50px;
+    font-size: 110%;
+  }
+
+  @media screen and (max-width: 1450px) {
+    width: 95px;
+    height: 48px;
+    font-size: 100%;
+  }
+
+  @media screen and (max-width: 1250px) {
+    width: 70px;
+    height: 45px;
+    padding: 2px;
+    font-size: 90%;
+    letter-spacing: 0;
+  }
+
+  @media screen and (max-width: 1000px) {
+    
+  }
+
   @media only screen and (max-width: 768px) {
-    display: none;
+    width: 70px;
+    height: 40px;
+    padding: 2px;
+    font-size: 90%;
+    letter-spacing: 0;
+  }
+
+  @media only screen and (max-width: 730px) {
+    width: 75px;
+    height: 50px;
   }
 `;
 
@@ -126,7 +277,7 @@ const Nav = () => {
       <Section>
         <Container>
           <Links>
-            <Logo src="./img/logo.png" />
+            <Logo className='boxBtn' src="./img/Christian-Abbate.jpg"/>
             <List>
               <ListItem className='textNav' onClick={() => scrollToSection('home')}>Home</ListItem>
               <ListItem className='textNav' onClick={() => scrollToSection('projects')}>Projects</ListItem>

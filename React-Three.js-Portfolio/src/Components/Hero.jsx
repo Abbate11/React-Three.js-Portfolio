@@ -10,6 +10,7 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-width: 320px;
 
   @media only screen and (max-width: 768px) {
     height: 100vh;
