@@ -9,7 +9,7 @@ const Section = styled.div`
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   min-width: 320px;
 
   @media only screen and (max-width: 768px) {
@@ -20,9 +20,9 @@ const Section = styled.div`
 const Container = styled.div`
   height: 100%;
   align-self: center;
-  width: 70%;
+  width: 80%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -33,25 +33,24 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
-  flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  gap: 5%;
+  width: 50%;
 
   @media only screen and (max-width: 768px) {
-    flex: 1;
     align-items: center;
-    gap: 0;
     padding-top: 15px;
   }
 `;
 
-const Title = styled.h1`
-  font-size: 100px;
+const Title = styled.div`
+  font-size: 120px;
   color: black;
   padding: 10px;
   padding-right: 50px;
+  width: 600px;
 
   @media only screen and (max-width: 768px) {
     font-size: 60px;
@@ -76,6 +75,7 @@ const WhatWeDo = styled.div`
 
 const Line = styled.img`
   height: 5px;
+  padding-top: 2px;
 
   @media only screen and (max-width: 768px) {
     padding-top: 5px;
@@ -84,11 +84,11 @@ const Line = styled.img`
 
 const Subtitle = styled.h2`
   color: greenyellow	;
-  font-size: 20px;
+  font-size: 25px;
 `;
 
 const Desc = styled.p`
-  font-size: 24px;
+  font-size: 25px;
   color: lightgrey;
 
   @media only screen and (max-width: 768px) {
@@ -101,8 +101,9 @@ const Button = styled.button`
   background-color:whitesmoke;
   color: greenyellow;
   font-weight: 700;
-  width: 100px;
-  padding: 10px;
+  width: 120px;
+  padding: 15px;
+  font-size: 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -126,7 +127,7 @@ const Button = styled.button`
 `;
 
 const Right = styled.div`
-  flex: 3;
+    width: 50%;
 
   @media only screen and (max-width: 768px) {
     flex: 1;
@@ -154,7 +155,7 @@ const Hero = () => {
             <Line src="./img/line.png" />
             <Subtitle className='textNav'>What I Do</Subtitle>
           </WhatWeDo>
-          <Desc>I enjoy creating delightful, human-centered digital experiences.</Desc>
+          <Desc>I enjoy building efficient and creative digital solutions.</Desc>
           <Button onClick={() => scrollToSection('works')} className='textBtn box'>Learn More</Button>
         </Left>
         <Right>
