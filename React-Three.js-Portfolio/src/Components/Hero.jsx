@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import Nav from './Nav';
 import styled from 'styled-components';
 
@@ -52,6 +52,36 @@ const Title = styled.div`
   padding-right: 50px;
   width: 600px;
 
+  @media only screen and (max-width: 1700px) {
+    font-size: 110px;
+    width: 450px;
+  }
+
+  @media only screen and (max-width: 1500px) {
+    font-size: 100px;
+    width: 400px;
+  }
+
+  @media only screen and (max-width: 1350px) {
+    font-size: 90px;
+    width: 375px;
+  }
+
+  @media only screen and (max-width: 1225px) {
+    font-size: 80px;
+    width: 350px;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    font-size: 70px;
+    width: 320px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 65px;
+    width: 300px;
+  }
+
   @media only screen and (max-width: 768px) {
     font-size: 60px;
     margin: 10px;
@@ -61,7 +91,7 @@ const Title = styled.div`
 
 const P = styled.a`
   color: white;
-`
+`;
 
 const WhatWeDo = styled.div`
   display: flex;
@@ -83,7 +113,7 @@ const Line = styled.img`
 `;
 
 const Subtitle = styled.h2`
-  color: greenyellow	;
+  color: greenyellow;
   font-size: 25px;
 `;
 
@@ -127,7 +157,13 @@ const Button = styled.button`
 `;
 
 const Right = styled.div`
-    width: 50%;
+  width: 50%;
+  height: 100%;
+  display: flex;
+
+  @media only screen and (max-width: 2000px){
+    
+  }
 
   @media only screen and (max-width: 768px) {
     flex: 1;
@@ -135,14 +171,59 @@ const Right = styled.div`
   }
 `;
 
-
 const Hero = () => {
-
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const ResponsiveSphere = () => {
+    const { viewport } = useThree(); // Get viewport size
+    const sphereRef = useRef();
+
+    // Adjust sphere size and other properties dynamically based on multiple breakpoints
+    useFrame(() => {
+      // console.log("Viewport width: ", viewport.width);
+      let scale = 1.05; // Default scale for large screens
+      let distort = 0.37; // Default distort value
+
+      if (viewport.width <= 6) {
+        scale = 0.95;  // For tablets/small laptops
+        distort = 0.35; // Less distortion on smaller screens
+      }
+
+      if (viewport.width <= 5.75) {
+        scale = 0.9;  // For mobile devices
+        distort = 0.35; // Even less distortion on very small screens
+      }
+
+      if (viewport.width <= 5.5) {
+        scale = 0.85;  // For mobile devices
+        distort = 0.35; // Even less distortion on very small screens
+      }
+
+      if (viewport.width <= 5.25) {
+        scale = 0.8;  // For mobile devices
+        distort = 0.35; // Even less distortion on very small screens
+      }
+
+      if (viewport.width <= 5) {
+        scale = 0.85;  // For mobile devices
+        distort = 0.35; // Even less distortion on very small screens
+      }
+
+      // Apply scale and distortion changes
+      sphereRef.current.scale.set(scale, scale, scale);
+      sphereRef.current.material.distort = distort;
+    });
+
+    return (
+      <Sphere ref={sphereRef} args={[2.3, 250, 250]} position={[0, 0, 0]}>
+        <MeshDistortMaterial color="greenyellow" distort={0.4} speed={2} />
+      </Sphere>
+    );
   };
 
   return (
@@ -163,13 +244,11 @@ const Hero = () => {
             <OrbitControls enableZoom={false} enablePan={false} />
             <ambientLight intensity={1.5} />
             <directionalLight 
-            castShadow
-            position={[-5, 5, 3]} 
-            intensity={2}
+              castShadow
+              position={[-5, 5, 3]} 
+              intensity={2}
             />
-            <Sphere args={[2.3, 250, 250]} position={[0, 0, 0]}>
-              <MeshDistortMaterial color="greenyellow" distort={0.4} speed={2} />
-            </Sphere>
+            <ResponsiveSphere />
           </Canvas>
         </Right>
       </Container>
@@ -178,3 +257,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
