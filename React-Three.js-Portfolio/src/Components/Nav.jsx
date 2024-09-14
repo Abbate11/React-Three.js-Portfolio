@@ -282,8 +282,8 @@ const Nav = () => {
             <Logo className='boxBtn' src="./img/Christian-Abbate.jpg"/>
             <List>
               <ListItem className='textNav' onClick={() => scrollToSection('home')}>Home</ListItem>
-              <ListItem className='textNav' onClick={() => scrollToSection('projects')}>Projects</ListItem>
               <ListItem className='textNav' onClick={() => scrollToSection('works')}>Skills</ListItem>
+              <ListItem className='textNav' onClick={() => scrollToSection('projects')}>Projects</ListItem>
               <ListItem className='textNav' onClick={() => scrollToSection('contact')}>Contact</ListItem>
             </List>
           </Links>
