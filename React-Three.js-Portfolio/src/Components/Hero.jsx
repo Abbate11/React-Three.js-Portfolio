@@ -48,6 +48,7 @@ const Left = styled.div`
 const Title = styled.div`
   font-size: 120px;
   color: black;
+  background-color: whitesmoke;
   padding: 10px;
   padding-right: 50px;
   width: 600px;
@@ -100,15 +101,6 @@ const WhatWeDo = styled.div`
 
   @media only screen and (max-width: 768px) {
     padding-top: 10px;
-  }
-`;
-
-const Line = styled.img`
-  height: 5px;
-  padding-top: 2px;
-
-  @media only screen and (max-width: 768px) {
-    padding-top: 5px;
   }
 `;
 
@@ -233,8 +225,7 @@ const Hero = () => {
         <Left>
           <Title className='textNav insetBox'>Think<P>.</P> Make<P>.</P> Solve<P>.</P></Title>
           <WhatWeDo>
-            <Line src="./img/line.png" />
-            <Subtitle className='textNav'>What I Do</Subtitle>
+            <Subtitle className='textNav'>- What I Do</Subtitle>
           </WhatWeDo>
           <Desc>I enjoy building efficient and creative digital solutions.</Desc>
           <Button onClick={() => scrollToSection('works')} className='textBtn box'>Learn More</Button>

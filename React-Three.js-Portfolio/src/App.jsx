@@ -9,8 +9,7 @@ import "./App.css";
 
 const Container = styled.div`
   height: 100vh;
-  background-color: whitesmoke;
-  /* background: url('./img/bg-img.jpg') no-repeat center center fixed;  */
+  background-color: #b1b1b1;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

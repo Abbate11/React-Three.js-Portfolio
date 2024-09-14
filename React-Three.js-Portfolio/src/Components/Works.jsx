@@ -62,7 +62,7 @@ const ListItem = styled.li`
     font-size: 80px;
     font-weight: bold;
     cursor: pointer;
-    color: transparent;
+    color: whitesmoke;
     -webkit-text-stroke: 1px #28282B;
     position: relative;
     padding: 5px;

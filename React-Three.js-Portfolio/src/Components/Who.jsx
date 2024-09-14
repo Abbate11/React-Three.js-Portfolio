@@ -43,6 +43,7 @@ const Left = styled.div`
 
 const Title = styled.h1`
     font-size: 100px;
+    background-color: whitesmoke;
    color: black;
    padding: 10px;
 
@@ -88,13 +89,6 @@ const WhatWeDo = styled.div`
   }
 `;
 
-const Line = styled.img`
-    height: 5px;
-
-    @media only screen and (max-width: 768px) {
-    padding-top: 5px;
-  }
-`;
 
 const Subtitle = styled.h2`
     color: greenyellow;
@@ -107,7 +101,8 @@ const Subtitle = styled.h2`
 
 const Desc = styled.p`
     font-size: 24px;
-    color: whitesmoke;
+    background-color: whitesmoke;
+    color: black;
     padding: 30px;
 
     @media only screen and (max-width: 768px) {
@@ -170,10 +165,9 @@ const Who = () => {
         <Right>
           <Title className='textNav insetBox'>Think outside the [<A>box<P>.</P></A>]</Title>
           <WhatWeDo>
-            <Line src="./img/line.png" />
-            <Subtitle className='textNav'>Who I am</Subtitle>
+            <Subtitle className='textNav'>- Who I am</Subtitle>
           </WhatWeDo>
-          <Desc className='insetBox insetText textDesc'>A Creative designer and developer with a passion for the Arts</Desc>
+          <Desc className='insetBox insetText textDesc'>A Creative designer and developer with a passion for the Arts.</Desc>
             <Button onClick={() => scrollToSection('projects')} className='textBtn box'>See my works</Button>
         </Right>
       </Container>

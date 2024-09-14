@@ -149,6 +149,7 @@ const Icons = styled.div`
 
 const Icon = styled.img`
   height: 60px;
+  background-color: whitesmoke;
   cursor: pointer;
   border-radius: 5px;
   transition: box-shadow .15s,transform .15s;
