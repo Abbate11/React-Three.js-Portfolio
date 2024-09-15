@@ -11,11 +11,7 @@ const Section = styled.div`
   flex-direction: column;
   justify-content: center;
   min-width: 320px;
-
-  @media only screen and (max-width: 768px) {
-    height: 100vh;
-  }
-`;
+`
 
 const Container = styled.div`
   height: 100%;
@@ -24,7 +20,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1200px) {
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -39,7 +35,15 @@ const Left = styled.div`
   gap: 5%;
   width: 50%;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1700px) {
+    gap: 4%;
+  }
+
+  @media only screen and (max-width: 1500px) {
+    gap: 3%;
+  }
+
+  @media only screen and (max-width: 1200px) {
     align-items: center;
     padding-top: 15px;
   }
@@ -56,6 +60,7 @@ const Title = styled.div`
   @media only screen and (max-width: 1700px) {
     font-size: 110px;
     width: 450px;
+    padding-right: 100px;
   }
 
   @media only screen and (max-width: 1500px) {
@@ -71,6 +76,7 @@ const Title = styled.div`
   @media only screen and (max-width: 1225px) {
     font-size: 80px;
     width: 350px;
+    margin-top: 10px;
   }
 
   @media only screen and (max-width: 1100px) {
@@ -107,13 +113,18 @@ const WhatWeDo = styled.div`
 const Subtitle = styled.h2`
   color: greenyellow;
   font-size: 25px;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 20px;
+    padding-top: 10px;
+  }
 `;
 
 const Desc = styled.p`
   font-size: 25px;
   color: lightgrey;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1200px) {
     padding-bottom: 10px;
     text-align: center;
   }
@@ -182,30 +193,42 @@ const Hero = () => {
       let distort = 0.37; // Default distort value
 
       if (viewport.width <= 6) {
-        scale = 0.95;  // For tablets/small laptops
-        distort = 0.35; // Less distortion on smaller screens
-      }
-
-      if (viewport.width <= 5.75) {
-        scale = 0.9;  // For mobile devices
-        distort = 0.35; // Even less distortion on very small screens
+        scale = 0.95; 
       }
 
       if (viewport.width <= 5.5) {
-        scale = 0.85;  // For mobile devices
-        distort = 0.35; // Even less distortion on very small screens
-      }
-
-      if (viewport.width <= 5.25) {
-        scale = 0.8;  // For mobile devices
-        distort = 0.35; // Even less distortion on very small screens
+        scale = 0.9;  
       }
 
       if (viewport.width <= 5) {
-        scale = 0.85;  // For mobile devices
-        distort = 0.35; // Even less distortion on very small screens
+        scale = 0.85;  
       }
 
+      if (viewport.width <= 4.5) {
+        scale = 0.8;  
+      }
+
+      if (viewport.width <= 4) {
+        scale = 0.65; 
+      }
+
+      if (viewport.width <= 3.5) {
+        scale = 0.6; 
+      }
+
+      if (viewport.width <= 3) {
+        scale = 0.5; 
+      }
+
+      if (viewport.width <= 2.5) {
+        scale = 0.4; 
+      }
+
+      if (viewport.width <= 2) {
+        scale = 0.3; 
+      }
+
+    
       // Apply scale and distortion changes
       sphereRef.current.scale.set(scale, scale, scale);
       sphereRef.current.material.distort = distort;
