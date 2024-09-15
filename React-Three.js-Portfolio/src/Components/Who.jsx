@@ -167,7 +167,7 @@ const Who = () => {
           <WhatWeDo>
             <Subtitle className='textNav'>- Who I am</Subtitle>
           </WhatWeDo>
-          <Desc className='insetBox insetText textDesc'>A Creative designer and developer with a passion for the Arts.</Desc>
+          <Desc className='insetBox insetText textDesc'>A passionate developer inspired to find creative solutions to drive positive change.</Desc>
             <Button onClick={() => scrollToSection('projects')} className='textBtn box'>See my works</Button>
         </Right>
       </Container>
