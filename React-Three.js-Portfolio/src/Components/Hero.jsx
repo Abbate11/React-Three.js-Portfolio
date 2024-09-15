@@ -172,38 +172,38 @@ const Hero = () => {
   };
 
   const ResponsiveSphere = () => {
-    const { viewport } = useThree(); // Get viewport size
+    const { viewport } = useThree(); 
     const sphereRef = useRef();
 
-    // Adjust sphere size and other properties dynamically based on multiple breakpoints
+    
     useFrame(() => {
-      // console.log("Viewport width: ", viewport.width);
-      let scale = 1.05; // Default scale for large screens
-      let distort = 0.37; // Default distort value
+      console.log("Viewport width: ", viewport.width);
+      let scale = 1.05; 
+      let distort = 0.37; 
 
       if (viewport.width <= 6) {
-        scale = 0.95;  // For tablets/small laptops
-        distort = 0.35; // Less distortion on smaller screens
+        scale = 0.95;  
+        distort = 0.35; 
       }
 
       if (viewport.width <= 5.75) {
-        scale = 0.9;  // For mobile devices
-        distort = 0.35; // Even less distortion on very small screens
+        scale = 0.9;  
+        distort = 0.35; 
       }
 
       if (viewport.width <= 5.5) {
-        scale = 0.85;  // For mobile devices
-        distort = 0.35; // Even less distortion on very small screens
+        scale = 0.85;  
+        distort = 0.35; 
       }
 
       if (viewport.width <= 5.25) {
-        scale = 0.8;  // For mobile devices
-        distort = 0.35; // Even less distortion on very small screens
+        scale = 0.8;  
+        distort = 0.35; 
       }
 
       if (viewport.width <= 5) {
-        scale = 0.85;  // For mobile devices
-        distort = 0.35; // Even less distortion on very small screens
+        scale = 0.8;  
+        distort = 0.35; 
       }
 
       // Apply scale and distortion changes

@@ -19,7 +19,7 @@ const Section = styled.div`
 const Container = styled.div`
     height: 100%;
     align-self: center;
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
 

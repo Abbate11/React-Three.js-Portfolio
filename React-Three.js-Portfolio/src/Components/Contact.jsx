@@ -24,7 +24,7 @@ const Container = styled.div`
 
 const Left = styled.div`
   flex: 1;
-  width: 70%;
+  width: 80%;
   height: 90%;
   border-radius: 5px;
 

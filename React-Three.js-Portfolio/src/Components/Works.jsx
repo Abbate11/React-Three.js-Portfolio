@@ -24,7 +24,7 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
 
