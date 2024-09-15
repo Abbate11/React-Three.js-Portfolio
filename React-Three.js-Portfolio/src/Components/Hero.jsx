@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import Nav from './Nav';
@@ -36,7 +36,7 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5%;
+  gap: 4.5%;
   width: 50%;
 
   @media only screen and (max-width: 768px) {
@@ -110,7 +110,7 @@ const Subtitle = styled.h2`
 `;
 
 const Desc = styled.p`
-  font-size: 25px;
+  font-size: 27px;
   color: lightgrey;
 
   @media only screen and (max-width: 768px) {
@@ -172,41 +172,38 @@ const Hero = () => {
   };
 
   const ResponsiveSphere = () => {
-    const { viewport } = useThree(); // Get viewport size
+    const { viewport } = useThree();
     const sphereRef = useRef();
 
-    // Adjust sphere size and other properties dynamically based on multiple breakpoints
     useFrame(() => {
-      // console.log("Viewport width: ", viewport.width);
-      let scale = 1.05; // Default scale for large screens
-      let distort = 0.37; // Default distort value
+      let scale = 1.05;
+      let distort = 0.37;
 
       if (viewport.width <= 6) {
-        scale = 0.95;  // For tablets/small laptops
-        distort = 0.35; // Less distortion on smaller screens
+        scale = 0.95;
+        distort = 0.35;
       }
 
       if (viewport.width <= 5.75) {
-        scale = 0.9;  // For mobile devices
-        distort = 0.35; // Even less distortion on very small screens
+        scale = 0.9;
+        distort = 0.35;
       }
 
       if (viewport.width <= 5.5) {
-        scale = 0.85;  // For mobile devices
-        distort = 0.35; // Even less distortion on very small screens
+        scale = 0.85;
+        distort = 0.35;
       }
 
       if (viewport.width <= 5.25) {
-        scale = 0.8;  // For mobile devices
-        distort = 0.35; // Even less distortion on very small screens
+        scale = 0.8;
+        distort = 0.35;
       }
 
       if (viewport.width <= 5) {
-        scale = 0.85;  // For mobile devices
-        distort = 0.35; // Even less distortion on very small screens
+        scale = 0.85;
+        distort = 0.35;
       }
 
-      // Apply scale and distortion changes
       sphereRef.current.scale.set(scale, scale, scale);
       sphereRef.current.material.distort = distort;
     });
@@ -218,27 +215,51 @@ const Hero = () => {
     );
   };
 
+  const LightWithMouse = () => {
+    const lightRef = useRef();
+    const { size } = useThree();
+    const [mousePos, setMousePos] = useState([0, 0]);
+
+    useEffect(() => {
+      const handleMouseMove = (event) => {
+        const x = (event.clientX / window.innerWidth) * 2 - 1;
+        const y = -(event.clientY / window.innerHeight) * 2 + 1;
+        setMousePos([x * size.width, y * size.height]);
+      };
+
+      window.addEventListener('mousemove', handleMouseMove);
+      return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, [size]);
+
+    useFrame(() => {
+      if (lightRef.current) {
+        lightRef.current.position.set(mousePos[0], mousePos[1], 3);
+      }
+    });
+
+    return <directionalLight ref={lightRef} castShadow intensity={1.5} />;
+  };
+
   return (
     <Section>
       <Nav />
       <Container>
         <Left>
-          <Title className='textNav insetBox'>Think<P>.</P> Make<P>.</P> Solve<P>.</P></Title>
+          <Title className='textNav insetBox'>
+            Think<P>.</P> Make<P>.</P> Solve<P>.</P>
+          </Title>
           <WhatWeDo>
             <Subtitle className='textNav'>- What I Do</Subtitle>
           </WhatWeDo>
-          <Desc>I enjoy building efficient and creative digital solutions.</Desc>
-          <Button onClick={() => scrollToSection('works')} className='textBtn box'>Learn More</Button>
+          <Desc>I enjoy building comprehensive and effective digital solutions.</Desc>
+          <Button onClick={() => scrollToSection('works')} className='textBtn box'>
+            Learn More
+          </Button>
         </Left>
         <Right>
           <Canvas shadows>
             <OrbitControls enableZoom={false} enablePan={false} />
-            <ambientLight intensity={1.5} />
-            <directionalLight 
-              castShadow
-              position={[-5, 5, 3]} 
-              intensity={2}
-            />
+            <LightWithMouse /> 
             <ResponsiveSphere />
           </Canvas>
         </Right>
