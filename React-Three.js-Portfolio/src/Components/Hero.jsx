@@ -3,7 +3,8 @@ import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import Nav from './Nav';
 import styled from 'styled-components';
-import { AmbientLight } from 'three';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPowerOff } from '@fortawesome/free-solid-svg-icons'
 
 const Section = styled.div`
   height: 100vh;
@@ -173,6 +174,7 @@ const Right = styled.div`
   background-color: #0f0f0f;
   border-radius: 5%;
   margin-bottom: 5%;
+  position: relative;
 
   @media only screen and (max-width: 2000px){
     
@@ -184,9 +186,31 @@ const Right = styled.div`
   }
 `;
 
+const StyledIcon = styled(FontAwesomeIcon)`
+  font-size: 3rem;
+  color: orange;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+  z-index: 20;
+`
+
+const PowerIcon = ({ onClick }) => {
+  return (
+    <div>
+      <StyledIcon icon={faPowerOff} onClick={onClick}/>
+    </div>
+  )
+}
+
+
 const Hero = () => {
   const [lightsOn, setLightsOn] = useState(false);
-  const [intensity, setIntensity] = useState(0);
+
+  const toggleLights = () => {
+    setLightsOn(!lightsOn);
+  };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -245,7 +269,7 @@ const Hero = () => {
     });
 
     return (
-      <Sphere ref={sphereRef} args={[2.3, 250, 250]} position={[0, 0.65, 0]} castShadow>
+      <Sphere ref={sphereRef} args={[2.3, 250, 250]} position={[0, 0.65, 0]} castShadow={lightsOn}>
         <MeshDistortMaterial color="orange" distort={0.4} speed={2} />
       </Sphere>
     );
@@ -253,9 +277,9 @@ const Hero = () => {
 
   const GroundPlane = () => {
     return (
-      <mesh rotation={[-Math.PI / 1.7, 0, 0]} position={[0, -2.5, 0]} receiveShadow>
+      <mesh rotation={[-Math.PI / 1.7, 0, 0]} position={[0, -2.5, 0]} receiveShadow={lightsOn}>
         <planeGeometry args={[10, 10]} />
-        <shadowMaterial opacity={0.3} />
+        <shadowMaterial opacity={lightsOn ? 1 : 0} />
       </mesh>
     );
   };
@@ -294,7 +318,7 @@ const Hero = () => {
       <>
         <directionalLight
           ref={directionalLightRef}
-          castShadow
+          castShadow={lightsOn}
           position={[0, 2, 1]}
           intensity={0} // Start with zero intensity
           shadow-mapSize-width={1024}
@@ -324,10 +348,8 @@ const Hero = () => {
             Learn More
           </Button>
         </Left>
-        <Right 
-          className='insetBoxWhite'
-          onClick={() => setLightsOn(!lightsOn)} // Toggle lights on click
-        >
+        <Right className='insetBoxWhite' >
+          <PowerIcon onClick={toggleLights}/> 
           <Canvas shadows>
             <LightsOn />
             <OrbitControls enableZoom={false} enablePan={false} />

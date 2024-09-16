@@ -172,7 +172,7 @@ const Who = () => {
           <WhatWeDo>
             <Subtitle className='textNav'>- Who I am</Subtitle>
           </WhatWeDo>
-          <Desc className='insetBox insetText textDesc'><Name>My name is Christian,</Name> and I enjoy the thrill of success, and the satisfaction of seeing a project through to it's completion.</Desc>
+          <Desc className='insetBox insetText textDesc'><Name>My name is Christian,</Name> and I enjoy the challenge of programming, and the satisfaction of seeing a project through to it's completion.</Desc>
             <Button onClick={() => scrollToSection('projects')} className='textBtn box'>See my works</Button>
         </Right>
       </Container>
