@@ -79,6 +79,7 @@ const Video = styled.video`
 
 const Title = styled.h3`
     z-index: 101;
+    color: whitesmoke;
 `;
 
 const Button = styled.p`

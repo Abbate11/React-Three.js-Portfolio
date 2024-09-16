@@ -9,7 +9,7 @@ const Desc = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: greenyellow;
+  background-color: blue;
   border-radius: 10px;
   position: absolute;
   top: 100px;
