@@ -99,6 +99,11 @@ const Subtitle = styled.h2`
   }
 `;
 
+const Name = styled.p`
+  color: greenyellow;
+`
+
+
 const Desc = styled.p`
     font-size: 24px;
     background-color: whitesmoke;
@@ -167,7 +172,7 @@ const Who = () => {
           <WhatWeDo>
             <Subtitle className='textNav'>- Who I am</Subtitle>
           </WhatWeDo>
-          <Desc className='insetBox insetText textDesc'>A passionate developer inspired to find creative solutions to drive positive change.</Desc>
+          <Desc className='insetBox insetText textDesc'><Name>My name is Christian,</Name> and I enjoy the thrill of success, and the satisfaction of seeing a project through to it's completion.</Desc>
             <Button onClick={() => scrollToSection('projects')} className='textBtn box'>See my works</Button>
         </Right>
       </Container>

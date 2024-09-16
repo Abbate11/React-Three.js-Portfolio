@@ -134,7 +134,7 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   cursor: pointer;
-  color: white;
+  color: orange;
 `;
 
 const Icons = styled.div`
@@ -205,7 +205,7 @@ const Button = styled.button`
   font-size: 120%;
   letter-spacing: 1.5px;
   background-color: whitesmoke;
-  color:  greenyellow;
+  color:  orange;
   border: none;
   border-radius: 7px;
   cursor: pointer;

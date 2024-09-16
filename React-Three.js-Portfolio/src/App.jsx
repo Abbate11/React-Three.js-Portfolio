@@ -29,11 +29,11 @@ const App = () => {
       <div id="home">
         <Hero />
       </div>
-      <div id="works">
-        <Works />
-      </div>
       <div id="who">
         <Who />
+      </div>
+      <div id="works">
+        <Works />
       </div>
       <div id="projects">
         <Projects />
