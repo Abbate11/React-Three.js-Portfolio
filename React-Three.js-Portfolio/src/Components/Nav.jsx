@@ -4,6 +4,11 @@ import styled from 'styled-components';
 const Section = styled.div`
   display: flex;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(245,245,245,0.6);
 `;
 
 const Container = styled.div`
@@ -13,7 +18,6 @@ const Container = styled.div`
   align-items: center;
   margin-top: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px dashed lightgray;
 
   @media only screen and (max-width: 1700px) {
     width: 90%;
@@ -283,6 +287,7 @@ const Nav = () => {
             <Logo className='boxBtn' src="./img/Christian-Abbate.jpg"/>
             <List>
               <ListItem className='textNav' onClick={() => scrollToSection('home')}>Home</ListItem>
+              <ListItem className='textNav' onClick={() => scrollToSection('who')}>About</ListItem>
               <ListItem className='textNav' onClick={() => scrollToSection('works')}>Skills</ListItem>
               <ListItem className='textNav' onClick={() => scrollToSection('projects')}>Projects</ListItem>
               <ListItem className='textNav' onClick={() => scrollToSection('contact')}>Contact</ListItem>

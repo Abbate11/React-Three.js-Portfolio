@@ -5,7 +5,6 @@ const Section = styled.div`
     height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 20px;
 
     @media only screen and (max-width: 768px) {
     height: 190vh;
@@ -13,7 +12,7 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-    height: 90%;
+    height: 75%;
     scroll-snap-align: center;
     scroll-snap-stop: always;
     align-self: center;
@@ -22,6 +21,7 @@ const Container = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
+    padding-top: 5%;
 
     @media only screen and (max-width: 768px) {
     width: 100%;

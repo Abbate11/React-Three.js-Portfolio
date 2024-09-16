@@ -20,13 +20,14 @@ const Section = styled.div`
     scroll-snap-stop: always;
     display: flex;
     justify-content: center;
-    position: relative;
+    padding-top: 2%;
 `;
 
 const Container = styled.div`
     width: 80%;
     display: flex;
     justify-content: space-between;
+    position: relative;
 
     @media only screen and (max-width: 768px) {
     width: 100%;

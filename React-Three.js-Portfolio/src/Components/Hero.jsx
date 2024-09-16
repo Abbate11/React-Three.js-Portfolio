@@ -13,6 +13,7 @@ const Section = styled.div`
   flex-direction: column;
   justify-content: center;
   min-width: 320px;
+  padding-top: 2%;
 `
 
 const Container = styled.div`
@@ -55,6 +56,7 @@ const Left = styled.div`
   @media only screen and (max-width: 1200px) {
     align-items: center;
     padding-top: 15px;
+    gap: 1%
   }
 `;
 
@@ -121,6 +123,7 @@ const WhatWeDo = styled.div`
 const Subtitle = styled.h2`
   color: orange;
   font-size: 25px;
+  padding-top: 20px;
 
   @media only screen and (max-width: 1200px) {
     font-size: 20px;
@@ -131,6 +134,7 @@ const Subtitle = styled.h2`
 const Desc = styled.p`
   font-size: 27px;
   color: lightgrey;
+  padding-bottom: 10px;
 
   @media only screen and (max-width: 1200px) {
     padding-bottom: 10px;
@@ -172,17 +176,18 @@ const Right = styled.div`
   height: 60%;
   display: flex;
   background-color: #0f0f0f;
-  border-radius: 5%;
+  border-radius: 2rem;
   margin-bottom: 5%;
   position: relative;
 
-  @media only screen and (max-width: 2000px){
-    
+  @media only screen and (max-width: 1200px){
+    flex: 1;
+    width: 40%;
   }
 
   @media only screen and (max-width: 768px) {
     flex: 1;
-    width: 60%;
+    width: 80%;
   }
 `;
 
@@ -338,12 +343,12 @@ const Hero = () => {
       <Container>
         <Left>
           <Title className='textNav insetBox'>
-            Learn<P>.</P> Create<P>.</P> Improve<P>.</P>
+            Learn<P>.</P> Create<P>.</P> Solve<P>.</P>
           </Title>
           <WhatWeDo>
             <Subtitle className='textNav'>- What I Do</Subtitle>
           </WhatWeDo>
-          <Desc>I am a full stack developer.</Desc>
+          <Desc>I am a Full Stack Developer, Problem Solver Extrordinare, and a Student of the Craft.</Desc>
           <Button onClick={() => scrollToSection('who')} className='textBtn box'>
             Learn More
           </Button>
@@ -352,7 +357,7 @@ const Hero = () => {
           <PowerIcon onClick={toggleLights}/> 
           <Canvas shadows>
             <LightsOn />
-            <OrbitControls enableZoom={false} enablePan={false} />
+            <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
             <ResponsiveSphere />
             <GroundPlane />
           </Canvas>
