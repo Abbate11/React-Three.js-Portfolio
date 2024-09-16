@@ -17,7 +17,7 @@ const Container = styled.div`
     scroll-snap-align: center;
     scroll-snap-stop: always;
     align-self: center;
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
