@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Section = styled.div`
@@ -138,7 +139,7 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   cursor: pointer;
-  color: orange;
+  color: ${(props) => props.color};
 `;
 
 const Icons = styled.div`
@@ -273,6 +274,43 @@ const Button = styled.button`
 `;
 
 const Nav = () => {
+    const [activeSection, setActiveSection] = useState("");
+    
+    const sectionColors = {
+      home: "orange",
+      who: "greenyellow",
+      works: "blue",
+      projects: "orange",
+      contact: "yellow"
+    };
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        const sections = document.querySelectorAll("section");
+        let currentSection = "";
+  
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.scrollY >= sectionTop - sectionHeight / 3) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+  
+        setActiveSection(currentSection || 'home');
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+
+      handleScroll();
+  
+      // Cleanup the event listener on component unmount
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
+
+
     const scrollToSection = (id) => {
       const element = document.getElementById(id);
       if (element) {
@@ -286,11 +324,11 @@ const Nav = () => {
           <Links>
             <Logo className='boxBtn' src="./img/Christian-Abbate.jpg"/>
             <List>
-              <ListItem className='textNav' onClick={() => scrollToSection('home')}>Home</ListItem>
-              <ListItem className='textNav' onClick={() => scrollToSection('who')}>About</ListItem>
-              <ListItem className='textNav' onClick={() => scrollToSection('works')}>Skills</ListItem>
-              <ListItem className='textNav' onClick={() => scrollToSection('projects')}>Projects</ListItem>
-              <ListItem className='textNav' onClick={() => scrollToSection('contact')}>Contact</ListItem>
+              <ListItem className='textNav' color={activeSection === 'home' ? sectionColors.home : "whitesmoke"} onClick={() => scrollToSection('home')}>Home</ListItem>
+              <ListItem className='textNav' color={activeSection === 'who' ? sectionColors.who : "whitesmoke"} onClick={() => scrollToSection('who')}>About</ListItem>
+              <ListItem className='textNav' color={activeSection === 'works' ? sectionColors.works : "whitesmoke"} onClick={() => scrollToSection('works')}>Skills</ListItem>
+              <ListItem className='textNav' color={activeSection === 'projects' ? sectionColors.projects : "whitesmoke"} onClick={() => scrollToSection('projects')}>Projects</ListItem>
+              <ListItem className='textNav' color={activeSection === 'contact' ? sectionColors.contact : "whitesmoke"} onClick={() => scrollToSection('contact')}>Contact</ListItem>
             </List>
           </Links>
           <Icons>
