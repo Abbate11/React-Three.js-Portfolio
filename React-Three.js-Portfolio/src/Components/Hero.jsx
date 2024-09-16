@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef } from 'react';
 import { MeshDistortMaterial, OrbitControls, Sphere } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import Nav from './Nav';
@@ -188,32 +188,32 @@ const Hero = () => {
 
     
     useFrame(() => {
-      let scale = 1.05;
+      let scale = .8;
       let distort = 0.37;
-      console.log("Viewport width: ", viewport.width);
+      // console.log("Viewport width: ", viewport.width);
 
       if (viewport.width <= 6) {
-        scale = 0.95; 
+        scale = 0.8; 
       }
 
       if (viewport.width <= 5.5) {
-        scale = 0.9;  
+        scale = 0.75;  
       }
 
       if (viewport.width <= 5) {
-        scale = 0.85;  
+        scale = 0.7;  
       }
 
       if (viewport.width <= 4.5) {
-        scale = 0.8;  
+        scale = 0.65;  
       }
 
       if (viewport.width <= 4) {
-        scale = 0.65; 
+        scale = 0.6; 
       }
 
       if (viewport.width <= 3.5) {
-        scale = 0.6; 
+        scale = 0.55; 
       }
 
       if (viewport.width <= 3) {
@@ -235,36 +235,22 @@ const Hero = () => {
     });
 
     return (
-      <Sphere ref={sphereRef} args={[2.3, 250, 250]} position={[0, 0, 0]}>
+      <Sphere ref={sphereRef} args={[2.3, 250, 250]} position={[0, .65, 0]} castShadow>
         <MeshDistortMaterial color="greenyellow" distort={0.4} speed={2} />
       </Sphere>
     );
   };
 
-  const LightWithMouse = () => {
-    const lightRef = useRef();
-    const { size } = useThree();
-    const [mousePos, setMousePos] = useState([0, 0]);
-
-    useEffect(() => {
-      const handleMouseMove = (event) => {
-        const x = (event.clientX / window.innerWidth) * 2 - 1;
-        const y = -(event.clientY / window.innerHeight) * 2 + 1;
-        setMousePos([x * size.width, y * size.height]);
-      };
-
-      window.addEventListener('mousemove', handleMouseMove);
-      return () => window.removeEventListener('mousemove', handleMouseMove);
-    }, [size]);
-
-    useFrame(() => {
-      if (lightRef.current) {
-        lightRef.current.position.set(mousePos[0], mousePos[1], 3);
-      }
-    });
-
-    return <directionalLight ref={lightRef} castShadow intensity={1.5} />;
+  const GroundPlane = () => {
+    return (
+      <mesh rotation={[-Math.PI / 1.7, 0, 0]} position={[0, -2.5, 0]} receiveShadow>
+        <planeGeometry args={[10, 10]} />
+        <shadowMaterial opacity={0.3} />
+      </mesh>
+    );
   };
+
+ 
 
   return (
     <Section>
@@ -284,9 +270,17 @@ const Hero = () => {
         </Left>
         <Right>
           <Canvas shadows>
+            <ambientLight intensity={.3}/>
+            <directionalLight 
+            castShadow
+            position={[0, 2, 1]} 
+            intensity={2.5}
+            shadow-mapSize-width={1024}
+            shadow-mapSize-height={1024}
+            />
             <OrbitControls enableZoom={false} enablePan={false} />
-            <LightWithMouse /> 
             <ResponsiveSphere />
+            <GroundPlane/>
           </Canvas>
         </Right>
       </Container>

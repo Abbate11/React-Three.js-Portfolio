@@ -7,8 +7,8 @@ import ProductDesign from './ProductDesign'
 import SocialMedia from './SocialMedia'
 
 const data = [
-  "Web Design",
-  "Development",
+  "Website Design",
+  "App Development",
   "Data Management",
   "Product Design",
   "Social Media",
@@ -119,7 +119,7 @@ const Works = () => {
             </List>
           </Left>
           <Right>
-            {work === "Web Design" ? (<WebDesign/>) : work === "Development" ? (<Development/>)
+            {work === "Website Design" ? (<WebDesign/>) : work === "App Development" ? (<Development/>)
              : work === "Data Management" ? (<DataManagement/>) : work === "Product Design" ? (<ProductDesign/>) : (<SocialMedia/>)}
           </Right>
         </Container>
