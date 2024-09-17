@@ -4,7 +4,7 @@
 
 ## Deployed
 
-[Check it Out](https://c-abbate-portfolio.onrender.com/)
+[Check it out here](https://c-abbate-portfolio.onrender.com/)
   
 ## Description
 
