@@ -62,9 +62,11 @@ const Links = styled.div`
 `;
 
 const Logo = styled.img`
-  height: 90px;
-  width: 80px;
-  border-radius: 20px;
+  height: auto;
+  width: 70px;
+  border-radius: 1rem;
+  transition: scale 0.2s ease;
+  cursor: pointer;
 
   @media screen and (max-width: 2000px) {
     height: 90px;
@@ -88,6 +90,10 @@ const Logo = styled.img`
 
   @media only screen and (max-width: 730px) {
     height: 90px;
+  }
+
+  &:hover{
+    scale: 1.1;
   }
 `;
 
