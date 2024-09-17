@@ -140,6 +140,11 @@ const List = styled.ul`
 const ListItem = styled.li`
   cursor: pointer;
   color: ${(props) => props.color};
+
+  &:hover {
+    color: ${(props) =>  props.hoverColor || props.color };
+    transition: color 0.3s ease;
+  }
 `;
 
 const Icons = styled.div`
@@ -157,7 +162,11 @@ const Icon = styled.img`
   background-color: whitesmoke;
   cursor: pointer;
   border-radius: 5px;
-  transition: box-shadow .15s,transform .15s;
+  transition: box-shadow .15s ease,transform .15s ease, translate .2s ease;
+
+  &:hover {
+    translate: 0 -3%;
+  }
 
   &:active {
     transform: translateY(6px);
@@ -214,7 +223,11 @@ const Button = styled.button`
   border: none;
   border-radius: 7px;
   cursor: pointer;
-  transition: box-shadow .15s,transform .15s;
+  transition: box-shadow .15s ease,transform .15s ease, translate 0.2s ease;
+  
+  &:hover {
+    translate: 0 -3%;
+  }
 
   &:active {
     transform: translateY(6px);
@@ -280,37 +293,36 @@ const Nav = () => {
       home: "orange",
       who: "greenyellow",
       works: "blue",
-      projects: "orange",
+      projects: "pink",
       contact: "yellow"
     };
   
     useEffect(() => {
-      const handleScroll = () => {
-        const sections = document.querySelectorAll("section");
-        let currentSection = "";
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(entry.target.id);
+            }
+          });
+        },
+        {
+          threshold: 0.6, // 60% of the section needs to be visible to trigger
+        }
+      );
   
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          if (window.scrollY >= sectionTop - sectionHeight / 3) {
-            currentSection = section.getAttribute("id");
-          }
-        });
+      const sections = document.querySelectorAll("section");
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
   
-        setActiveSection(currentSection || 'home');
-      };
-  
-      window.addEventListener("scroll", handleScroll);
-
-      handleScroll();
-  
-      // Cleanup the event listener on component unmount
       return () => {
-        window.removeEventListener("scroll", handleScroll);
+        sections.forEach((section) => {
+          observer.unobserve(section);
+        });
       };
     }, []);
-
-
+  
     const scrollToSection = (id) => {
       const element = document.getElementById(id);
       if (element) {
@@ -324,11 +336,11 @@ const Nav = () => {
           <Links>
             <Logo className='boxBtn' src="./img/Christian-Abbate.jpg"/>
             <List>
-              <ListItem className='textNav' color={activeSection === 'home' ? sectionColors.home : "whitesmoke"} onClick={() => scrollToSection('home')}>Home</ListItem>
-              <ListItem className='textNav' color={activeSection === 'who' ? sectionColors.who : "whitesmoke"} onClick={() => scrollToSection('who')}>About</ListItem>
-              <ListItem className='textNav' color={activeSection === 'works' ? sectionColors.works : "whitesmoke"} onClick={() => scrollToSection('works')}>Skills</ListItem>
-              <ListItem className='textNav' color={activeSection === 'projects' ? sectionColors.projects : "whitesmoke"} onClick={() => scrollToSection('projects')}>Projects</ListItem>
-              <ListItem className='textNav' color={activeSection === 'contact' ? sectionColors.contact : "whitesmoke"} onClick={() => scrollToSection('contact')}>Contact</ListItem>
+              <ListItem className='textNav' hoverColor={sectionColors.home} color={activeSection === 'home' ? sectionColors.home : "whitesmoke"} onClick={() => scrollToSection('home')}>Home</ListItem>
+              <ListItem className='textNav' hoverColor={sectionColors.who} color={activeSection === 'who' ? sectionColors.who : "whitesmoke"} onClick={() => scrollToSection('who')}>About</ListItem>
+              <ListItem className='textNav' hoverColor={sectionColors.works} color={activeSection === 'works' ? sectionColors.works : "whitesmoke"} onClick={() => scrollToSection('works')}>Skills</ListItem>
+              <ListItem className='textNav' hoverColor={sectionColors.projects} color={activeSection === 'projects' ? sectionColors.projects : "whitesmoke"} onClick={() => scrollToSection('projects')}>Projects</ListItem>
+              <ListItem className='textNav' hoverColor={sectionColors.contact} color={activeSection === 'contact' ? sectionColors.contact : "whitesmoke"} onClick={() => scrollToSection('contact')}>Contact</ListItem>
             </List>
           </Links>
           <Icons>

@@ -152,7 +152,11 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: box-shadow .15s,transform .15s;
+  transition: box-shadow .15s ease, transform .15s ease, translate 0.2s ease;
+
+  &:hover {
+    translate: 0 -3%;
+  }
 
   &:active {
     transform: translateY(6px);
@@ -193,18 +197,23 @@ const Right = styled.div`
 
 const StyledIcon = styled(FontAwesomeIcon)`
   font-size: 3rem;
-  color: orange;
+  color: ${(props) => (props.isOn ? 'orange' : 'whitesmoke')};
   position: absolute;
   bottom: 5%;
   right: 5%;
   cursor: pointer;
   z-index: 20;
+  transition: color 0.2s ease, scale 0.2s ease;
+
+  &:hover {
+    scale: 1.1;
+  }
 `
 
-const PowerIcon = ({ onClick }) => {
+const PowerIcon = ({ isOn, onClick }) => {
   return (
     <div>
-      <StyledIcon icon={faPowerOff} onClick={onClick}/>
+      <StyledIcon icon={faPowerOff} isOn={isOn} onClick={onClick}/>
     </div>
   )
 }
@@ -214,7 +223,7 @@ const Hero = () => {
   const [lightsOn, setLightsOn] = useState(false);
 
   const toggleLights = () => {
-    setLightsOn(!lightsOn);
+    setLightsOn((prev) => !prev);
   };
 
   const scrollToSection = (id) => {
@@ -232,41 +241,15 @@ const Hero = () => {
       let scale = 0.8;
       let distort = 0.37;
 
-      if (viewport.width <= 6) {
-        scale = 0.8;
-      }
-
-      if (viewport.width <= 5.5) {
-        scale = 0.75;
-      }
-
-      if (viewport.width <= 5) {
-        scale = 0.7;
-      }
-
-      if (viewport.width <= 4.5) {
-        scale = 0.65;
-      }
-
-      if (viewport.width <= 4) {
-        scale = 0.6;
-      }
-
-      if (viewport.width <= 3.5) {
-        scale = 0.55;
-      }
-
-      if (viewport.width <= 3) {
-        scale = 0.5;
-      }
-
-      if (viewport.width <= 2.5) {
-        scale = 0.4;
-      }
-
-      if (viewport.width <= 2) {
-        scale = 0.3;
-      }
+      if (viewport.width <= 6) scale = 0.8;
+      if (viewport.width <= 5.5) scale = 0.75;
+      if (viewport.width <= 5) scale = 0.7;
+      if (viewport.width <= 4.5) scale = 0.65;
+      if (viewport.width <= 4) scale = 0.6;
+      if (viewport.width <= 3.5) scale = 0.55;
+      if (viewport.width <= 3) scale = 0.5;
+      if (viewport.width <= 2.5) scale = 0.4;
+      if (viewport.width <= 2) scale = 0.3;
 
       // Apply scale and distortion changes
       sphereRef.current.scale.set(scale, scale, scale);
@@ -354,7 +337,7 @@ const Hero = () => {
           </Button>
         </Left>
         <Right className='insetBoxWhite' >
-          <PowerIcon onClick={toggleLights}/> 
+          <PowerIcon isOn={lightsOn} onClick={toggleLights}/> 
           <Canvas shadows>
             <LightsOn />
             <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />

@@ -7,7 +7,7 @@ import Works from "./Components/Works";
 import Contact from "./Components/Contact";
 import "./App.css";
 
-const Container = styled.div`
+const Container = styled.section`
   height: 100vh;
   background-color: #b1b1b1;
   -webkit-background-size: cover;
@@ -26,21 +26,21 @@ const Container = styled.div`
 const App = () => {
   return (
     <Container>
-      <div id="home">
+      <section id="home">
         <Hero />
-      </div>
-      <div id="who">
+      </section>
+      <section id="who">
         <Who />
-      </div>
-      <div id="works">
+      </section>
+      <section id="works">
         <Works />
-      </div>
-      <div id="projects">
+      </section>
+      <section id="projects">
         <Projects />
-      </div>
-      <div id="contact">
+      </section>
+      <section id="contact">
         <Contact />
-      </div>
+      </section>
     </Container>
   );
 }

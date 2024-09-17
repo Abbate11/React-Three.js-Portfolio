@@ -36,6 +36,7 @@ const Left = styled.div`
 const Title = styled.h1`
   color: white;
   text-align: center;
+  font-size: 1.5rem;
 `;
 
 const Form = styled.form`
@@ -68,9 +69,10 @@ const TextArea = styled.textarea`
 
 const Button = styled.button`
   background-color: yellow;
-  color: white;
+  color: whitesmoke;
   border: none;
-  font-weight: 700;
+  font-size: large;
+  font-weight: 900;
   cursor: pointer;
   border-radius: 5px;
   padding: 20px;
