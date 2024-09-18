@@ -110,16 +110,6 @@ const P = styled.a`
   color: orange;
 `;
 
-const WhatWeDo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  @media only screen and (max-width: 768px) {
-    padding-top: 10px;
-  }
-`;
-
 const Subtitle = styled.h2`
   color: orange;
   font-size: 25px;
@@ -137,13 +127,12 @@ const Desc = styled.p`
   padding-bottom: 10px;
 
   @media only screen and (max-width: 1200px) {
-    padding-bottom: 10px;
     text-align: center;
   }
 `;
 
 const Button = styled.button`
-  background-color:whitesmoke;
+  background-color: whitesmoke;
   color: orange;
   font-weight: 700;
   width: 120px;
@@ -328,9 +317,7 @@ const Hero = () => {
           <Title className='textNav insetBox'>
             Learn<P>.</P> Create<P>.</P> Solve<P>.</P>
           </Title>
-          <WhatWeDo>
             <Subtitle className='textNav'>- What I Do</Subtitle>
-          </WhatWeDo>
           <Desc>I am a Full Stack Developer, Problem Solver Extrordinare, and a Student of the Craft.</Desc>
           <Button onClick={() => scrollToSection('who')} className='textBtn box'>
             Learn More

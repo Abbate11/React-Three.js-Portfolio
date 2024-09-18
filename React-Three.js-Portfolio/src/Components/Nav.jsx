@@ -9,7 +9,7 @@ const Section = styled.div`
   top: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(245,245,245,0.6);
+  background:rgba(245,245,245,0.6) ;
 `;
 
 const Container = styled.div`
