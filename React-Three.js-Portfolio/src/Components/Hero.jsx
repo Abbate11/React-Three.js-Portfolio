@@ -43,7 +43,7 @@ const Left = styled.div`
   justify-content: center;
   gap: 4.5%;
   width: 50%;
-  flex: 2;
+  flex: 1;
 
   @media only screen and (max-width: 1700px) {
     gap: 4%;
@@ -167,6 +167,7 @@ const Button = styled.button`
 const Right = styled.div`
   width: 60%;
   height: 60%;
+  max-width: 1000px;
   display: flex;
   background-color: #0f0f0f;
   border-radius: 2rem;

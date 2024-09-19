@@ -36,9 +36,12 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
-  width: 50%;
+  width: 60%;
   height: 60%;
+  max-width: 1000px;
   display: flex;
+  background-color: #0f0f0f;
+  border-radius: 2rem;
   margin-bottom: 5%;
 
   @media only screen and (max-width: 768px) {
@@ -58,7 +61,8 @@ const Right = styled.div`
   justify-content: center;
   gap: 4.5%;
   width: 50%;
-  flex: 2;
+  min-width: auto;
+  flex: 1;
 
   @media only screen and (max-width: 1700px) {
     gap: 4%;
@@ -121,6 +125,9 @@ const A = styled.a`
   @media only screen and (max-width: 768px) {
     font-size: 40px;
   }
+`
+const B = styled.div`
+  display: inline-block;
 `
 
 const P = styled.a`
@@ -243,7 +250,7 @@ const Who = () => {
   return (
     <Section>
       <Container>
-        <Left>
+        <Left className='insetBoxWhite'>
           <Canvas camera={{ fov: 25, position: [10, 10, 10] }}>
             <OrbitControls enableZoom={false} autoRotate={false} autoRotateSpeed={5} enablePan={false} />
             <ambientLight intensity={2} />
@@ -254,7 +261,7 @@ const Who = () => {
           </Canvas>
         </Left>
         <Right>
-          <Title className='textNav insetBox'>Think outside the [<A>box<P>.</P></A>]</Title>
+          <Title className='textNav insetBox'>Think outside <B>the[<A>box<P>.</P></A>]</B></Title>
           <Subtitle className='textNav'>- Who I am</Subtitle>
           <Desc><Name>My name is Christian,</Name>I enjoy the challenge of programming, and the satisfaction of seeing a project through to it's completion.</Desc>
           <Button onClick={() => scrollToSection('projects')} className='textBtn box'>See my works</Button>
