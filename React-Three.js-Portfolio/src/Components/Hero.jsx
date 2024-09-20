@@ -61,42 +61,11 @@ const Left = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 120px;
+  font-size: 7.5rem;
   color: black;
+  display: flex;
+  flex-direction: column;
   background-color: whitesmoke;
-  padding-right: 50px;
-  margin-top: 10px;
-  max-width: 700px;
-  padding: 10px;
-  padding-right: 80px;
-
-
-  @media only screen and (max-width: 1500px) {
-    font-size: 95px;
-  }
-
-
-  @media only screen and (max-width: 1225px) {
-    font-size: 80px;
-    width: 350px;
-    margin-top: 15%;
-  }
-
-  @media only screen and (max-width: 1100px) {
-    font-size: 70px;
-    width: 320px;
-  }
-
-  @media only screen and (max-width: 1000px) {
-    font-size: 60px;
-    width: 300px;
-  }
-
-  @media only screen and (max-width: 768px) {
-    font-size: 50px;
-    margin: 10px;
-    margin-top: 15px;
-  }
 `;
 
 const P = styled.a`
@@ -107,21 +76,12 @@ const Subtitle = styled.h2`
   color: orange;
   font-size: 25px;
   padding-top: 20px;
-
-  @media only screen and (max-width: 1200px) {
-    font-size: 20px;
-    padding-top: 10px;
-  }
 `;
 
 const Desc = styled.p`
   font-size: 27px;
   color: lightgrey;
   padding-bottom: 10px;
-
-  @media only screen and (max-width: 1200px) {
-    text-align: center;
-  }
 `;
 
 const Button = styled.button`
@@ -166,11 +126,6 @@ const Right = styled.div`
   border-radius: 2rem;
   margin-bottom: 5%;
   position: relative;
-
-  @media only screen and (max-width: 1200px) {
-    width: 40%;
-    height: 25%;
-  }
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -304,7 +259,7 @@ const Hero = () => {
       <Container>
         <Left>
           <Title className='textNav insetBox'>
-            Learn<P>.</P> Create<P>.</P> Solve<P>.</P>
+           Think Create Solve
           </Title>
             <Subtitle className='textNav'>- What I Do</Subtitle>
           <Desc>I am a Full Stack Developer, Problem Solver Extrordinare, and a Student of the Craft.</Desc>

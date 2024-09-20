@@ -9,56 +9,27 @@ const Section = styled.div`
   top: 0;
   width: 100%;
   z-index: 100;
-  background:rgba(245,245,245,0.6) ;
+  background:rgba(245,245,245,0.6);
+
+  @media only screen and (max-width: 1000px) {
+    position: static;
+  }
 `;
 
 const Container = styled.div`
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
-  padding-bottom: 10px;
-
-  @media only screen and (max-width: 1700px) {
-    width: 90%;
-    margin: 20px 20px 0px 20px;
-  }
-
-  @media screen and (max-width: 1100px) {
-    width: 100%;
-  }
-
-  @media only screen and (max-width: 1000px) {
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  @media only screen and (max-width: 730px) {
-    margin-top: 5px;
-  }
+  margin-top: 1%;
+  padding-bottom: 1%;
 `;
 
 const Links = styled.div`
   display: flex;
   align-items: center;
-  gap: 50px;
-
-  @media screen and (max-width: 2000px) {
-    gap: 10px;
-  }
-
-  @media screen and (max-width: 1700px) {
-    gap: 0px
-  }
-
-  @media screen and (max-width: 1450px) {
-    gap: 0px;
-  }
-
-  @media screen and (max-width: 1250px) {
-    gap: 0px;
-  }
+  gap: 10%;
+  margin-left: 4%;
 `;
 
 const Logo = styled.img`
@@ -67,30 +38,6 @@ const Logo = styled.img`
   border-radius: 1rem;
   transition: scale 0.2s ease;
   cursor: pointer;
-
-  @media screen and (max-width: 2000px) {
-    height: 90px;
-  }
-
-  @media screen and (max-width: 1700px) {
-    height: 90px
-  }
-
-  @media screen and (max-width: 1450px) {
-    height: 80px
-  }
-
-  @media screen and (max-width: 1250px) {
-    height: 75px
-  }
-
-  @media only screen and (max-width: 1000px) {
-    height: 70px;
-  }
-
-  @media only screen and (max-width: 730px) {
-    height: 90px;
-  }
 
   &:hover{
     scale: 1.1;
@@ -102,45 +49,6 @@ const List = styled.ul`
   gap: 110px;
   list-style: none;
   font-size: 125%;
-
-  @media screen and (max-width: 2000px) {
-    font-size: 110%;
-  }
-
-  @media screen and (max-width: 1700px) {
-    gap: 90px;
-    font-size: 110%;
-  }
-
-  @media screen and (max-width: 1450px) {
-    gap: 70px;
-    font-size: 105%;
-  }
-
-  @media screen and (max-width: 1250px) {
-    gap: 50px;
-    font-size: 100%;
-  }
-
-  @media only screen and (max-width: 1000px) {
-    gap: 40px;
-    font-size: 95%;
-  }
-
-  @media screen and (max-width: 900px) {
-    gap: 30px;
-    font-size: 90%;
-  }
-
-  @media only screen and (max-width: 768px) {
-    gap: 20px;
-    font-size: 85%;
-  }
-
-  @media screen and (max-width: 730px) {
-    display: none;
-  }
-
 `;
 
 const ListItem = styled.li`
@@ -157,10 +65,7 @@ const Icons = styled.div`
   display: flex;
   align-items: center;
   gap: 15px;
-
-  @media only screen and (max-width: 750px) {
-    justify-content: space-between;
-  }
+  margin-right: 4%;
 `;
 
 const Icon = styled.img`
@@ -184,38 +89,6 @@ const Icon = styled.img`
     1px 11px 5px rgba(16,16,16,0.2),
     1px 13px 17px rgba(16,16,16,0.2),
     1px 15px 30px rgba(16,16,16,0.4);
-  }
-
-  @media screen and (max-width: 2000px) {
-    height: 55px;
-  }
-
-  @media screen and (max-width: 1700px) {
-    height: 50px;
-  }
-
-  @media screen and (max-width: 1450px) {
-    height: 50px;
-  }
-
-  @media screen and (max-width: 1250px) {
-    height: 45px;
-  }
-
-  @media screen and (max-width: 1000px) {
-    height: 45px;
-  }
-
-  @media screen and (max-width: 900px) {
-    height: 45px;
-  }
-
-  @media only screen and (max-width: 768px) {
-    height: 40px;
-  }
-
-  @media screen and (max-width: 730px) {
-    height: 50px;
   }
 `;
 
@@ -245,50 +118,6 @@ const Button = styled.button`
     1px 11px 5px rgba(16,16,16,0.2),
     1px 13px 17px rgba(16,16,16,0.2),
     1px 15px 30px rgba(16,16,16,0.4);
-  }
-
-  @media screen and (max-width: 2000px) {
-    width: 100px;
-    height: 55px;
-    letter-spacing: 1px;
-    font-size: 120%;
-  }
-
-  @media screen and (max-width: 1700px) {
-    width: 100px;
-    height: 50px;
-    font-size: 110%;
-  }
-
-  @media screen and (max-width: 1450px) {
-    width: 95px;
-    height: 48px;
-    font-size: 100%;
-  }
-
-  @media screen and (max-width: 1250px) {
-    width: 70px;
-    height: 45px;
-    padding: 2px;
-    font-size: 90%;
-    letter-spacing: 0;
-  }
-
-  @media screen and (max-width: 1000px) {
-    
-  }
-
-  @media only screen and (max-width: 768px) {
-    width: 70px;
-    height: 40px;
-    padding: 2px;
-    font-size: 90%;
-    letter-spacing: 0;
-  }
-
-  @media only screen and (max-width: 730px) {
-    width: 75px;
-    height: 50px;
   }
 `;
 
