@@ -61,7 +61,6 @@ const Right = styled.div`
   justify-content: center;
   gap: 4.5%;
   width: 50%;
-  min-width: auto;
   flex: 1;
 
   @media only screen and (max-width: 1700px) {
@@ -88,10 +87,6 @@ const Title = styled.div`
   max-width: 700px;
   padding: 10px;
   padding-right: 80px;
-
-  @media only screen and (max-width: 1700px) {
-    font-size: 100px;
-  }
 
   @media only screen and (max-width: 1500px) {
     font-size: 95px;
@@ -122,8 +117,24 @@ const Title = styled.div`
 const A = styled.a`
   font-size: 75px;
 
-  @media only screen and (max-width: 768px) {
-    font-size: 40px;
+  @media only screen and (max-width: 1500px) {
+    font-size: 71px;
+  }
+
+  @media only screen and (max-width: 1350px) {
+    font-size: 56px;
+  }
+
+  @media only screen and (max-width: 1225px) {
+    font-size: 45px;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    font-size: 37px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 30px;
   }
 `
 const B = styled.div`

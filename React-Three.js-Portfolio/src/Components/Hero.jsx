@@ -70,37 +70,30 @@ const Title = styled.div`
   padding: 10px;
   padding-right: 80px;
 
-  @media only screen and (max-width: 1700px) {
-    font-size: 100px;
-  }
 
   @media only screen and (max-width: 1500px) {
     font-size: 95px;
   }
 
-  @media only screen and (max-width: 1350px) {
-    font-size: 75px;
-    width: 375px;
-  }
 
   @media only screen and (max-width: 1225px) {
-    font-size: 60px;
+    font-size: 80px;
     width: 350px;
-    margin-top: 10px;
+    margin-top: 15%;
   }
 
   @media only screen and (max-width: 1100px) {
-    font-size: 50px;
+    font-size: 70px;
     width: 320px;
   }
 
   @media only screen and (max-width: 1000px) {
-    font-size: 40px;
+    font-size: 60px;
     width: 300px;
   }
 
   @media only screen and (max-width: 768px) {
-    font-size: 35px;
+    font-size: 50px;
     margin: 10px;
     margin-top: 15px;
   }
@@ -174,14 +167,9 @@ const Right = styled.div`
   margin-bottom: 5%;
   position: relative;
 
-  @media only screen and (max-width: 1200px){
-    flex: 1;
+  @media only screen and (max-width: 1200px) {
     width: 40%;
-  }
-
-  @media only screen and (max-width: 768px) {
-    flex: 1;
-    width: 80%;
+    height: 25%;
   }
 `;
 
