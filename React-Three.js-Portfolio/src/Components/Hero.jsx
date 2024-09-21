@@ -66,6 +66,8 @@ const Title = styled.div`
   display: flex;
   flex-direction: column;
   background-color: whitesmoke;
+  text-decoration: underline orange;
+  padding: 0vw 3vw 0.5vw 0.5vw;
 `;
 
 const P = styled.a`
@@ -259,7 +261,7 @@ const Hero = () => {
       <Container>
         <Left>
           <Title className='textNav insetBox'>
-           Think Create Solve
+           Think.  Create.  Solve. 
           </Title>
             <Subtitle className='textNav'>- What I Do</Subtitle>
           <Desc>I am a Full Stack Developer, Problem Solver Extrordinare, and a Student of the Craft.</Desc>

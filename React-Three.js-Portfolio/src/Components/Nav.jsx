@@ -11,13 +11,14 @@ const Section = styled.div`
   z-index: 100;
   background:rgba(245,245,245,0.6);
 
-  @media only screen and (max-width: 1000px) {
-    position: static;
+  @media only screen and (max-width: 768px) {
+    
   }
 `;
 
 const Container = styled.div`
   width: 100%;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,13 +29,20 @@ const Container = styled.div`
 const Links = styled.div`
   display: flex;
   align-items: center;
-  gap: 10%;
-  margin-left: 4%;
+  gap: 2vh;
+  margin-left:6vw;
+
+  @media only screen and (max-width: 1200px) {
+   
+  }
+
+  @media only screen and (max-width: 1050px) {
+    
+  }
 `;
 
 const Logo = styled.img`
-  height: auto;
-  width: 70px;
+  width: 6vh;
   border-radius: 1rem;
   transition: scale 0.2s ease;
   cursor: pointer;
@@ -42,13 +50,21 @@ const Logo = styled.img`
   &:hover{
     scale: 1.1;
   }
+
+  @media only screen and (max-width: 768px) {
+    
+  }
 `;
 
 const List = styled.ul`
   display: flex;
-  gap: 110px;
-  list-style: none;
+  gap: 3vw;
+  /* list-style: none; */
   font-size: 125%;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const ListItem = styled.li`
@@ -64,12 +80,20 @@ const ListItem = styled.li`
 const Icons = styled.div`
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-right: 4%;
+  gap: 2vw;
+  margin-right: 4vw;
+
+  @media only screen and (max-width: 1200px) {
+    scale: 0.9;
+  }
+
+  @media only screen and (max-width: 1050px) {
+    scale: 0.7;
+  }
 `;
 
 const Icon = styled.img`
-  height: 60px;
+  height: 6vh;
   background-color: whitesmoke;
   cursor: pointer;
   border-radius: 5px;
@@ -94,13 +118,14 @@ const Icon = styled.img`
 
 const Button = styled.button`
   width: 100px;
-  height: 60px;
+  height: 6vh;
   font-size: 120%;
   letter-spacing: 1.5px;
   background-color: whitesmoke;
   color:  orange;
   border: none;
   border-radius: 7px;
+  margin-left: 3vh;
   cursor: pointer;
   transition: box-shadow .15s ease,transform .15s ease, translate 0.2s ease;
   
