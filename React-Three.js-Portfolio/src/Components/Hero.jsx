@@ -4,7 +4,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import Nav from './Nav';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPowerOff } from '@fortawesome/free-solid-svg-icons'
+import { faLightbulb } from '@fortawesome/free-regular-svg-icons'
 
 const Section = styled.div`
   height: 100vh;
@@ -13,7 +13,6 @@ const Section = styled.div`
   flex-direction: column;
   justify-content: center;
   min-width: 320px;
-  padding-top: 2%;
 `
 
 const Container = styled.div`
@@ -30,10 +29,11 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 5%;
   }
 
   @media only screen and (max-width: 768px) {
-    gap: 2%;
+    gap: 0%;
   }
 `;
 
@@ -43,7 +43,6 @@ const Left = styled.div`
   justify-content: center;
   gap: 4.5%;
   width: 50%;
-  flex: 1;
 
   @media only screen and (max-width: 1700px) {
     gap: 4%;
@@ -55,35 +54,64 @@ const Left = styled.div`
 
   @media only screen and (max-width: 1200px) {
     align-items: center;
-    padding-top: 15px;
-    gap: 1%
+    margin-top: 5%;
+    gap: 0;
   }
 `;
 
 const Title = styled.div`
   font-size: 7.5rem;
   color: black;
-  display: flex;
-  flex-direction: column;
   background-color: whitesmoke;
-  text-decoration: underline orange;
   padding: 0vw 3vw 0.5vw 0.5vw;
+  width: fit-content;
+  height: auto;
+  margin-top: 5%;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 5rem;
+    margin-top: 20%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
-const P = styled.a`
+const P = styled.span`
   color: orange;
 `;
 
 const Subtitle = styled.h2`
   color: orange;
-  font-size: 25px;
-  padding-top: 20px;
+  font-size: 2rem;
+  padding-top: 2%;
+  
+  @media only screen and (max-width: 1200px) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1rem;
+    text-align: center;
+  }
 `;
 
 const Desc = styled.p`
-  font-size: 27px;
+  font-size: 2rem;
   color: lightgrey;
-  padding-bottom: 10px;
+  padding-bottom: 1%;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1rem;
+    text-align: center;
+  }
 `;
 
 const Button = styled.button`
@@ -92,7 +120,7 @@ const Button = styled.button`
   font-weight: 700;
   width: 120px;
   padding: 15px;
-  font-size: 15px;
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -115,23 +143,35 @@ const Button = styled.button`
   }
 
   @media only screen and (max-width: 768px) {
-    width: 150px;
+    width: fit-content;
+    font-size: 0.75rem;
   }
 `;
 
 const Right = styled.div`
-  width: 60%;
-  height: 60%;
+  width: 60vw;
+  height: 60vh;
   max-width: 1000px;
   display: flex;
   background-color: #0f0f0f;
   border-radius: 2rem;
   margin-bottom: 5%;
   position: relative;
+
+  @media only screen and (max-width: 1200px) {
+    height: 40vh;
+    width: 40vw;
+  }
+
+  @media only screen and (max-width: 768px) {
+    height: 30vh;
+    width: 50vw;
+    margin-top: 10%;
+  }
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
-  font-size: 3rem;
+  font-size: 4rem;
   color: ${(props) => (props.isOn ? 'orange' : 'whitesmoke')};
   position: absolute;
   bottom: 5%;
@@ -143,12 +183,20 @@ const StyledIcon = styled(FontAwesomeIcon)`
   &:hover {
     scale: 1.1;
   }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 3rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
 `
 
 const PowerIcon = ({ isOn, onClick }) => {
   return (
     <div>
-      <StyledIcon icon={faPowerOff} isOn={isOn} onClick={onClick}/>
+      <StyledIcon icon={faLightbulb} isOn={isOn} onClick={onClick}/>
     </div>
   )
 }
@@ -261,7 +309,7 @@ const Hero = () => {
       <Container>
         <Left>
           <Title className='textNav insetBox'>
-           Think.  Create.  Solve. 
+           Think<P>.</P><br></br>Create<P>.</P><br></br>Solve<P>.</P>
           </Title>
             <Subtitle className='textNav'>- What I Do</Subtitle>
           <Desc>I am a Full Stack Developer, Problem Solver Extrordinare, and a Student of the Craft.</Desc>

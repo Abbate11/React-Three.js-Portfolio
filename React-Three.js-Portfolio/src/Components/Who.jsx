@@ -11,7 +11,6 @@ const Section = styled.div`
   flex-direction: column;
   justify-content: center;
   min-width: 320px;
-  padding-top: 2%;
 `;
 
 const Container = styled.div`
@@ -28,10 +27,11 @@ const Container = styled.div`
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
+    gap: 5%;
   }
 
   @media only screen and (max-width: 768px) {
-    gap: 2%;
+    gap: 0%;
   }
 `;
 
@@ -44,14 +44,14 @@ const Left = styled.div`
   border-radius: 2rem;
   margin-bottom: 5%;
 
-  @media only screen and (max-width: 768px) {
-    flex: 1;
-    width: 40%;
+  @media only screen and (max-width: 1200px) {
+    height: 40vh;
+    width: 40vw;
   }
 
   @media only screen and (max-width: 768px) {
-    flex: 1;
-    width: 80%;
+    height: 30vh;
+    width: 50vw;
   }
 `;
 
@@ -59,59 +59,33 @@ const Right = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 4.5%;
   width: 50%;
-  flex: 1;
-
-  @media only screen and (max-width: 1700px) {
-    gap: 4%;
-  }
-
-  @media only screen and (max-width: 1500px) {
-    gap: 3%;
-  }
 
   @media only screen and (max-width: 1200px) {
     align-items: center;
-    padding-top: 15px;
-    gap: 1%
+    margin-top: 5%;
+    gap: 0;
   }
 `;
 
 const Title = styled.div`
-  font-size: 100px;
+  font-size: 7.5rem;
   color: black;
   background-color: whitesmoke;
-  padding-right: 50px;
-  margin-top: 10px;
-  max-width: 700px;
-  padding: 10px;
-  padding-right: 80px;
+  padding: 0vw 3vw 0.5vw 0.5vw;
+  width: fit-content;
+  height: auto;
+  margin-top: 5%;
+  margin-bottom: 4%;
 
-  @media only screen and (max-width: 1500px) {
-    font-size: 95px;
+  @media only screen and (max-width: 1200px) {
+    font-size: 5rem;
+    margin-top: 20%;
   }
 
-  @media only screen and (max-width: 1350px) {
-    font-size: 75px;
-    width: 375px;
-  }
-
-  @media only screen and (max-width: 1225px) {
-    font-size: 60px;
-    width: 350px;
-    margin-top: 10px;
-  }
-
-  @media only screen and (max-width: 1100px) {
-    font-size: 50px;
-    width: 320px;
-  }
-
-  @media only screen and (max-width: 1000px) {
-    font-size: 40px;
-    width: 300px;
-  }
+  @media only screen and (max-width: 768px) {
+    font-size: 2.5rem;
+ }
 `;
 
 const A = styled.a`
@@ -147,29 +121,43 @@ const P = styled.a`
 
 const Subtitle = styled.h2`
     color: greenyellow;
-    font-size: 25px;
-    padding-top: 40px;
+    font-size: 2rem;
+    padding-top: 1%;
+    margin: 0;
+    margin-bottom: 4%;
+
+    @media only screen and (max-width: 1200px) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
 
     @media only screen and (max-width: 768px) {
-    font-size: 20px;
-    padding-top: 10px;
+    font-size: 1rem;
+    text-align: center;
   }
 `;
 
 const Name = styled.p`
   color: greenyellow;
-  margin-bottom: 10px;
+  margin: 0;
 `
 
 
 const Desc = styled.p`
-    font-size: 27px;
+    font-size: 2rem;
     color: lightgrey;
-    padding-bottom: 10px;
+    margin: 0;
+    margin-bottom: 4%;
 
     @media only screen and (max-width: 1200px) {
+      font-size: 1.5rem;
       text-align: center;
   }
+
+    @media only screen and (max-width: 768px) {
+      font-size: 1rem;
+      text-align: center;
+    }
 `;
 
 const Button = styled.button`
@@ -248,8 +236,8 @@ const Who = () => {
         <meshPhongMaterial>
           <RenderTexture attach="map">
             <PerspectiveCamera makeDefault position={[0, 0, 4.5]} />
-            <color attach="background" args={['black']} />
-            <Text ref={textRef} fontSize={2} color='#949494' position={[0, 0, 0]}>
+            <color attach="background" args={['lime']} />
+            <Text ref={textRef} fontSize={2} color='grey' position={[0, 0, 0]}>
               Hello
             </Text>
           </RenderTexture>
@@ -262,10 +250,10 @@ const Who = () => {
     <Section>
       <Container>
         <Left className='insetBoxWhite'>
-          <Canvas camera={{ fov: 25, position: [10, 10, 10] }}>
+          <Canvas camera={{ fov: 40, position: [5, 5, 5] }}>
             <OrbitControls enableZoom={false} autoRotate={false} autoRotateSpeed={5} enablePan={false} />
-            <ambientLight intensity={2} />
-            <directionalLight intensity={2} position={[5, 5, 5]} />
+            <ambientLight intensity={3} />
+            <directionalLight intensity={3} position={[0, 5, 0]} />
             <pointLight intensity={2} position={[0, 0, 5]} />
             <Particles />
             <Shape />

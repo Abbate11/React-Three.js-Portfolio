@@ -5,15 +5,10 @@ import styled from 'styled-components';
 const Section = styled.div`
   display: flex;
   justify-content: center;
-  position: fixed;
-  top: 0;
   width: 100%;
   z-index: 100;
-  background:rgba(245,245,245,0.6);
-
-  @media only screen and (max-width: 768px) {
-    
-  }
+  top: 0;
+  position: relative;
 `;
 
 const Container = styled.div`
@@ -22,8 +17,14 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1%;
   padding-bottom: 1%;
+  position: fixed;
+  background:rgba(245,245,245,0.6);
+
+  @media only screen and (max-width: 768px) {
+    position: absolute;
+    top: 0;
+  }
 `;
 
 const Links = styled.div`
@@ -31,14 +32,6 @@ const Links = styled.div`
   align-items: center;
   gap: 2vh;
   margin-left:6vw;
-
-  @media only screen and (max-width: 1200px) {
-   
-  }
-
-  @media only screen and (max-width: 1050px) {
-    
-  }
 `;
 
 const Logo = styled.img`
@@ -50,19 +43,15 @@ const Logo = styled.img`
   &:hover{
     scale: 1.1;
   }
-
-  @media only screen and (max-width: 768px) {
-    
-  }
 `;
 
 const List = styled.ul`
   display: flex;
   gap: 3vw;
-  /* list-style: none; */
+  list-style: none;
   font-size: 125%;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1200px) {
     display: none;
   }
 `;
@@ -85,10 +74,6 @@ const Icons = styled.div`
 
   @media only screen and (max-width: 1200px) {
     scale: 0.9;
-  }
-
-  @media only screen and (max-width: 1050px) {
-    scale: 0.7;
   }
 `;
 
@@ -117,10 +102,9 @@ const Icon = styled.img`
 `;
 
 const Button = styled.button`
-  width: 100px;
+  width: fit-content;
   height: 6vh;
-  font-size: 120%;
-  letter-spacing: 1.5px;
+  font-size: 1.2rem;
   background-color: whitesmoke;
   color:  orange;
   border: none;
@@ -143,6 +127,10 @@ const Button = styled.button`
     1px 11px 5px rgba(16,16,16,0.2),
     1px 13px 17px rgba(16,16,16,0.2),
     1px 15px 30px rgba(16,16,16,0.4);
+  }
+
+  @media only screen and (max-width: 768px) {
+    height: auto;
   }
 `;
 
@@ -213,7 +201,7 @@ const Nav = () => {
             <a href="https://github.com/abbate11" target="_blank" rel="noopener noreferrer">
               <Icon className='box' src="./img/github.png" alt="GitHub" />
             </a>
-            <Button onClick={() => scrollToSection('contact')} className='textBtn box'>Hire Now</Button>
+            <Button onClick={() => scrollToSection('contact')} className='textBtn box'>Hire<br></br>Now</Button>
           </Icons>
         </Container>
       </Section>
