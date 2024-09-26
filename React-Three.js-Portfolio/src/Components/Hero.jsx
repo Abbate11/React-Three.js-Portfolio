@@ -71,10 +71,14 @@ const Title = styled.div`
   @media only screen and (max-width: 1200px) {
     font-size: 5rem;
     margin-top: 20%;
+    width: 50vw;
+    text-align: center;
   }
 
   @media only screen and (max-width: 768px) {
     font-size: 2.5rem;
+    width: 50vw;
+    text-align: center;
   }
 `;
 
