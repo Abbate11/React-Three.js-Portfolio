@@ -6,6 +6,10 @@ const Section = styled.div`
     display: flex;
     justify-content: center;
 
+    @media only screen and (max-width: 1200px) {
+    height: 270vh;
+  }
+
     @media only screen and (max-width: 768px) {
     height: 190vh;
   }
@@ -22,6 +26,10 @@ const Container = styled.div`
     flex-wrap: wrap;
     gap: 40px;
     padding-top: 5%;
+
+    @media only screen and (max-width: 1200px) {
+    padding-top: 20%;
+  }
 
     @media only screen and (max-width: 768px) {
     width: 100%;
@@ -44,6 +52,11 @@ const Project = styled.div`
     position: relative;
     overflow: hidden;
     transition: text-shadow .2s, box-shadow .3s,transform .3s;
+
+    @media only screen and (max-width: 1200px) {
+    width: 100%;
+    height: 40vh;
+  }
 
     @media only screen and (max-width: 768px) {
     width: 100%;
