@@ -100,19 +100,19 @@ const A = styled.a`
   }
 
   @media only screen and (max-width: 1350px) {
-    font-size: 56px;
+    font-size: 65px;
   }
 
   @media only screen and (max-width: 1225px) {
-    font-size: 45px;
+    font-size: 60px;
   }
 
   @media only screen and (max-width: 1100px) {
-    font-size: 37px;
+    font-size: 55px;
   }
 
   @media only screen and (max-width: 1000px) {
-    font-size: 30px;
+    font-size: 50px;
   }
 `
 const B = styled.div`

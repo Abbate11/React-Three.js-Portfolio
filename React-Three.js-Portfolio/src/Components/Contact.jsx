@@ -28,7 +28,7 @@ const Left = styled.div`
   height: 90%;
   border-radius: 5px;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1200px) {
     display: none;
   }
 `;

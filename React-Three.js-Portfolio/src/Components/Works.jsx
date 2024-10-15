@@ -51,6 +51,10 @@ const Left = styled.div`
     width: 50%;
     height: 60%;
 
+    @media only screen and (max-width: 2200px) {
+      width: 40vw;
+    }
+
     @media only screen and (max-width: 1200px) {
     height: 40vh;
     width: 40vw;
@@ -82,6 +86,15 @@ const ListItem = styled.li`
     border: 2px solid transparent;
     border-radius: 10px;
     transition: box-shadow .25s ease-out, transform .25s;
+
+    @media only screen and (max-width: 2200px) {
+      font-size: 4.5rem;
+    }
+
+    @media only screen and (max-width: 1700px) {
+      font-size: 4rem;
+    }
+
 
     @media only screen and (max-width: 1200px) {
     font-size: 4rem;
